@@ -1,0 +1,19 @@
+2.3 Réponse :
+# devant une ligne créé un commentaire.
+
+2.4 Réponse : le message affiché est :
+
+exo_04.rb:1: unterminated string meets end of file
+puts  "Salut, ça farte ?
+                         ^
+
+L'erreur est indiqué par le ^, ici on voit qu'il manque la fermeture des guillemets.
+
+2.6 Réponse :
+Après l'ajout de la seconde ligne, une erreur s'affiche car la variable "number_of_minutes_in_an_hour" n'est pas définie à l'initialisation du programme.
+
+2.7 Réponse :
+gets.chomp permet la saisie pour l'utilisateur de la valeur à enregistrer dans la variable user_name.
+
+La différence entre les 3 codes est l'interface utilisateur, le code b est le plus agréable à utiliser pour une interface homme-machine agréable.
+
