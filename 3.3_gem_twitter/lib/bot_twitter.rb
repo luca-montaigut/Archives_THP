@@ -44,15 +44,15 @@ end
 
 def send_to_random_5(client,handle)
   #.sample choisit x éléments au hasard dans l'array fourni, si on l'enlève ça l'envoi à tous
-  handle.sample(5).each { |user| client.update("Bonjour #{user}, tu fais parti de mes abonnés, ça fait plaisir ! #moussaillons_thp")}
+  handle.sample(5).each { |user| client.update("Bonjour #{user}, tu fais partie de mes abonnés, ça fait plaisir ! #moussaillons_thp")}
 end
 
 #Pour stream il faut ouvrir une session stream avec un login un peu différent voir ligne 8 et 20, par contre pour follow ou like ça ne marche pas avec le login stream il faut le normal d'où les 2 logins dans la def stream
 def stream(client_stream,client)
   puts "Streaming en cours ..."
-  client_stream.filter(track: "bonjour_monde") do |tweet|
+  client_stream.filter(track: "Mila") do |tweet|
     puts tweet.full_text
-    client.favorite(tweet)
-    puts "tweet liké"
   end
 end
+
+stream(client_stream,client)
