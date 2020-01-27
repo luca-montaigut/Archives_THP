@@ -10,6 +10,9 @@ require_relative 'lib/event'
 require_relative 'lib/event_creator'
 
 
-class App
-  
-end
+event1 = EventCreator.new
+
+puts ""
+puts event1.to_s
+puts ""
+puts event1.is_soon?
