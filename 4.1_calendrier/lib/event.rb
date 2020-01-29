@@ -28,7 +28,7 @@ class Event
   end
 
   def is_soon?
-    @start_date - (30 * 60) < Time.now
+    (Time.now - @start_date).abs < (30 * 60)
   end
 
   def to_s
