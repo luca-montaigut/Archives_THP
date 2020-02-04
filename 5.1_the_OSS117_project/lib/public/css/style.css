@@ -1,0 +1,161 @@
+html{
+  background-color:#fefefe
+}
+body{
+  font-family:Open Sans,Arial;
+  color:#454545;
+  font-size:16px;
+  margin:2em auto;
+  max-width:80%;
+  padding:1em;
+  line-height:1.4;
+  text-align:justify
+}
+a{
+  color:#07a
+}
+a:visited{
+  color:#941352
+}
+.noselect{
+  -webkit-touch-callout:none;
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none
+}
+
+blockquote{
+  color:#456;
+  margin-left:0;
+}
+blockquote span{
+  float:left;
+  margin-left:1rem;
+  padding-top:1rem
+}
+
+blockquote:before{
+  font-family:Times New Roman,Times,Arial;
+  color:#666;
+  content:open-quote;
+  font-size:2.2em;
+  font-weight:600;
+  float:left;
+  margin-top:0;
+  margin-right:.2rem;
+  width:1.2rem
+}
+blockquote:after{
+  content:"";
+  display:block;
+  clear:both
+}
+
+header{
+  display: flex;
+  flex-direction: row;
+}
+
+h1{
+  margin-left: 2vw;
+}
+
+.bouton{
+  margin: 20px 0px;
+  width: 200px;
+  height: 50px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border:2px solid #ff5d0c;
+  background-color: #f68121;
+}
+
+.bouton a{
+  color: aliceblue;
+  text-decoration: none;
+  font-size: large;
+}
+
+.bouton:hover{
+  text-decoration: underline aliceblue;
+}
+
+.view{
+  width: 2vw;
+}
+
+.auteur{
+  width: 12vw;
+  font-weight: bold;
+}
+
+.content{
+  width: 60vw;
+  margin : auto;
+  padding: 0px 1vw;
+}
+table{
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+
+th{
+  color: #ff5d0c;
+  text-align: center;
+}
+
+th, td {
+  border-bottom: 1px solid black;
+}
+
+.commentaire{
+  font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.comminput{
+  margin-left: 1vw;
+  width: 30vw;
+}
+
+form
+{
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+form *
+{
+  margin-left: 0px;
+  margin-bottom: 4px;
+  border-style: solid;
+  padding: 10px;
+  border-color: lightgrey;
+}
+
+form .citation{
+  height: 15vh;
+}
+
+.easter_egg{
+  opacity: 0;
+  margin: 0px;
+  bottom: 0px;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+}
+.easter_egg p{
+	margin-bottom: 0px;
+	margin-top: 0px;
+}
+.easter_egg:hover{
+  opacity: 1;
+}

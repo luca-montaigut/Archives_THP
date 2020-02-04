@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>The OSS117 Project</title>
+<link rel="stylesheet" type="text/css" href="<%= url("/css/style.css")%>">
+</head>
+  <body>
+    <header>
+    <a href="/"><img src="/images/header.png" alt="Sacré_Hubert" height="100" width="100"></a>
+    <h1>OSS is magic !</h1>
+    </header>
+    <h2> Consultez les citations du plus mythique des films d'espionnage !</h2>
+    <p>N'hésitez pas à ajouter la votre, à commenter votre favorite ou à corriger une erreur si vous en voyez.</p>
+    <table>   
+      <tr>
+        <th>Auteur</th>
+        <th>Citation</th>
+        <th></th>
+        <th></th>
+      </tr> 
+      <% gossips.each_with_index do |gossip, index| %>
+        <tr>
+          <td class="auteur"><%= gossip.author %></td>
+          <td class="content"><%= gossip.content %></td>
+          <td class="view"><a href="/gossips/<%= index + 1 %>">Voir</a></td>
+          <td class="view"><a href="/gossips/<%= index + 1 %>/edit/">Editer</a></td>
+        </tr>
+      <% end %>
+    </table>
+    <div class="bouton"><a href="/gossips/new/">Nouvelle citation</a></div><br/>
+    <div class="easter_egg">
+      <p>  (\(\</p>
+      <p>  ( -.-)</p>
+      <p>  o_(")(")</p>
+    </div>
+    </body>
+</html>

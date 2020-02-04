@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>The OSS117 Project - Créer une citation</title>
+<link rel="stylesheet" type="text/css" href="<%= url("/css/style.css")%>">
+</head>
+  <body>
+    <header>
+    <a href="/"><img src="/images/header.png" alt="Sacré_Hubert" height="100" width="100"></a>
+    <h1>OSS is magic !</h1>
+    </header>
+    <h2>Référence une citation</h2>
+    <p>Balance ta citation favorite via le formulaire ci-dessous</p>
+    <form action='/gossips/new/' method='POST'>
+      Saisi ici le nom du personnage :  <input class="comminput" type='text' name='gossip_author' required/><br/>
+      Balance sa citation : <textarea class="comminput" type='' name='gossip_content'></textarea>
+      <input type='submit'/>
+    </form>
+    <hr>
+    <p class="bouton"><a href="/">Retour accueil</a></p>
+  </body>
+</html>

@@ -28,6 +28,9 @@ class Router
       when 2
         puts "Voici les gossips de THP :"
         @controller.index_gossips
+      when 3
+        puts "Tu as choisis de supprimer un potin"
+        @controller.delete_gossip
       when 4
         puts "À bientôt !"
         break #Ce "break" permet de sortir de la boucle while. C'est même la seule façon d'en sortir.

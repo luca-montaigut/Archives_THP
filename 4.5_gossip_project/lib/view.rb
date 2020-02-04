@@ -17,4 +17,10 @@ class View
     end    
   end
   
+  def delete_gossip
+    puts "Quel qossip veux tu supprimmer ?"
+    print "> "
+    index = gets.chomp
+    return index
+  end
 end
