@@ -70,6 +70,7 @@ Calcule le coût de l'intégralité de la discographie de "Deep Purple".
 `Track.where(artist:"Deep Purple").sum(:price)`
 
 Modifie (via une boucle) tous les titres de "Eric Clapton" afin qu'ils soient affichés avec "Britney Spears" en artist.
+ 
  => ça je refuse de cautionner !
 
 
