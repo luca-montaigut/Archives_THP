@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  available_beds: 1
+  price: 1
+  description: MyText
+  has_wifi: false
+  welcome_message: MyText
+
+two:
+  available_beds: 1
+  price: 1
+  description: MyText
+  has_wifi: false
+  welcome_message: MyText

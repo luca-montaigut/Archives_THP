@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  start_date: 2020-02-09 15:53:56
+  end_date: 2020-02-09 15:53:56
+
+two:
+  start_date: 2020-02-09 15:53:56
+  end_date: 2020-02-09 15:53:56
