@@ -1,0 +1,20 @@
+
+  <h1>Vous êtes sur le potin <br>de <%= @current_gossip.user.first_name %> <%= @current_gossip.user.last_name %></h1>
+
+
+<main class="container">
+<div style="margin-bottom: 20px;"><%= link_to "Voir le profil de l'auteur", user_path(@current_gossip.user.id), :class => "btn btn-info" %></div>
+<div class="card">
+  <div class="card-header">
+    <%= @current_gossip.title %> - id potin = <%= @current_gossip.id %>
+  </div>
+  <div class="card-body">
+    <blockquote class="blockquote mb-0">
+      <p><%= @current_gossip.content %></p>
+      <footer class="blockquote-footer"><%= link_to "#{@current_gossip.user.first_name} #{@current_gossip.user.last_name}", user_path(@current_gossip.user.id) %> le <%=@current_gossip.created_at%></footer>
+    </blockquote>
+  </div>
+</div>
+<div style="margin-top: 20px;"><%= link_to "Retour Accueil", root_path, :class => "btn btn-info" %></div>
+
+</main>
