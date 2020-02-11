@@ -26,12 +26,13 @@
  #bibi{
   height:150px; 
   width: 150px; 
-  align-self: flex-end;
+  align-self: center;
  }
 
  #alfred{
   height:150px; 
   width: 150px;
+  align-self: center;
  }
 
  #lazyrabbit{

@@ -6,22 +6,21 @@
     <% end %>
 <% end %>
 
-<div class="container mt-5">
+<div class="container mt-5 form-group">
  <%= form_tag url_for(action: 'create'), method: "post" do %>
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 
-      <%= label_tag 'Title' %>
-      <%= text_field_tag 'title', @gossip.title %>
+      <%= label_tag 'Titre du potin' %>
+      <%= text_field_tag 'title', @gossip.title, class:"form-control" %>
       <br /> <br />
 
-      <%= label_tag 'Content' %>
-      <%= text_area_tag 'content', @gossip.content %>
+      <%= label_tag 'Contenu du potin' %>
+      <%= text_area_tag 'content', @gossip.content, class:"form-control" %>
       <br /> <br />
 
-      <%= label_tag 'User' %>
-      <%= text_field_tag 'user', @gossip.user %>
-      <br /> <br />
+     <input type="hidden" name="user" value=<%= User.first.id %>>
 
-      <%= submit_tag "Create Post" %>
+      <%= submit_tag "Create Post", class:"btn btn-primary"%>
 
     <% end %>
 </div>

@@ -10,4 +10,19 @@
     <li class="list-group-item">Ville : <%= @current_user.city.name %></li>
   </ul>
 </div>
+
+  <h3>Les autres potins de l'auteur</h3>
+  <div class="row row-cols-5 d-flex justify-content-center">
+    <% Gossip.all.each do |gossip| %>
+      <% if gossip.user_id == @current_user.id %>
+        <div class="card border-info text-center bg-light my-3 mx-3" style="max-width: 18rem;"> 
+          <div class="card-body">
+            <h5 class="card-title"><%= gossip.user.first_name %></h5>
+            <p class="card-text"><%= gossip.title %></p>
+          </div>
+          <div class="card-footer"><%= link_to "Voir plus", gossip_path(gossip.id), class:"btn btn-outline-info" %></div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
 </main>

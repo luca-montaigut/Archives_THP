@@ -22,12 +22,22 @@ City.create(
 )
 end
 
+User.create(
+  first_name: "Anon", 
+  last_name: "Ymous", 
+  description: "You can't see me but i'm not John Cena",
+  email: "anonymous@email.com",
+  age:rand(13..100),
+  city_id: City.find(rand(City.first.id..City.last.id)).id
+)
+
+
 10.times do
 User.create(
   first_name: Faker::Name.first_name, 
   last_name: Faker::Name.last_name, 
   description: Faker::Movie.quote,
-  email: Faker::Name.last_name + "@mail.com",
+  email: Faker::Name.last_name + "@email.com",
   age:rand(13..100),
   city_id: City.find(rand(City.first.id..City.last.id)).id
 )
@@ -37,7 +47,7 @@ end
 Gossip.create(
   title: Faker::ChuckNorris.unique.fact,
   content: Faker::Hipster.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 4),
-  user_id: User.find(rand(User.first.id..User.last.id)).id
+  user_id: User.all.sample.id
 )
 end
 
