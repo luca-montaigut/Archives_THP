@@ -1,0 +1,34 @@
+  <div>
+    <%if params[:first_name] == nil%>
+      <h1>Bienvenue cher Visiteur</h1>
+    <%else%>
+      <h1>Bienvenue <%= params[:first_name] %></h1>
+    <% end %>
+  </div>
+
+<% if params[:commit] == "Create Post" %>
+  <p class="container alert alert-success d-flex justify-content-center" role="alert">The super potin was succesfully saved !</p>
+<% end %>
+
+  <div class="container" style="margin-bottom: 20px; margin-top: 20px;"><%= link_to "Nouveau potin", new_gossip_path, :class => "btn btn-info" %></div>
+
+<main class="container">
+  <h3>Voici la liste des potins les plus croustillants du web :</h3>
+  <p>Cliquez sur le potin de votre choix pour en savoir plus ;)</p>
+  <% index = 1 %> <!--Création d'un index indépendant de la base de données-->
+  <% Gossip.all.each do |gossip| %>
+    <div class="card" style="margin-bottom : 10px;">
+      <div class="card-header">
+        Potin n°<%= index %>
+      </div>
+      <div class="card-body" >
+        <blockquote class="blockquote mb-0">
+          <p><%= link_to "#{gossip.title}", gossip_path(gossip.id) %></p>
+          <footer class="blockquote-footer"><%= gossip.user.first_name %></footer>
+        </blockquote>
+      </div>
+    </div>
+    <% index += 1 %>
+  <% end %>
+</main>
+

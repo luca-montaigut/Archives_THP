@@ -1,0 +1,13 @@
+
+  <h1>Profil de <%= @current_user.first_name %> <%= @current_user.last_name %></h1>
+
+<main class="container">
+<div class="card" >
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Description : <%= @current_user.description %></li>
+    <li class="list-group-item">Email : <%= @current_user.email %></li>
+    <li class="list-group-item">Age : <%= @current_user.age %></li>
+    <li class="list-group-item">Ville : <%= @current_user.city.name %></li>
+  </ul>
+</div>
+</main>

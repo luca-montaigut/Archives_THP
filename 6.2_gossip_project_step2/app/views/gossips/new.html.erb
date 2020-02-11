@@ -1,0 +1,27 @@
+
+
+<% if @gossip.errors.any? %>
+    <% @gossip.errors.full_messages.each do |message| %>
+      <p class="alert alert-danger d-flex justify-content-center" role="alert"><%= message %></p>
+    <% end %>
+<% end %>
+
+<div class="container mt-5">
+ <%= form_tag url_for(action: 'create'), method: "post" do %>
+
+      <%= label_tag 'Title' %>
+      <%= text_field_tag 'title', @gossip.title %>
+      <br /> <br />
+
+      <%= label_tag 'Content' %>
+      <%= text_area_tag 'content', @gossip.content %>
+      <br /> <br />
+
+      <%= label_tag 'User' %>
+      <%= text_field_tag 'user', @gossip.user %>
+      <br /> <br />
+
+      <%= submit_tag "Create Post" %>
+
+    <% end %>
+</div>
