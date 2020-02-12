@@ -1,0 +1,10 @@
+<div>
+  <% @comments.sort_by(&:created_at).each do |comment| %>
+    <p>
+      <%= comment.content %>
+      <strong><%= comment.user.first_name + " " + comment.user.last_name %></strong>
+      <%= link_to "Editer", edit_gossip_comment_path(@gossip.id, comment.id), class:"btn btn-outline-success" %>
+      <%= link_to "Supprimer", gossip_comment_path(@gossip.id, comment.id), class:"btn btn-outline-danger", data:{confirm:"Etes vous sûr de vouloir supprimer ce potin ?", method:"DELETE"} %>
+    </p>
+    <% end %>
+</div>

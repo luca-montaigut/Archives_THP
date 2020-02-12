@@ -1,0 +1,23 @@
+
+  <h1><%= @current_city.name %></h1>
+
+<main class="container">
+  <h3>Les autres potins de la ville</h3>
+  <div class="row row-cols-5 d-flex justify-content-center">
+    <% Gossip.all.each do |gossip| %>
+      <% if gossip.user.city_id == @current_city.id %>
+        <div class="card border-info text-center bg-light my-3 mx-3" style="max-width: 18rem;"> 
+          <div class="card-body">
+            <h5 class="card-title"><%= gossip.user.first_name %></h5>
+            <p class="card-text"><%= gossip.title %></p>
+          </div>
+          <div class="card-footer">
+            <%= link_to "Voir plus", gossip_path(gossip.id), class:"btn btn-outline-info" %>
+            <%= link_to "Editer", edit_gossip_path(gossip.id), class:"btn btn-outline-success" %>
+            <%= link_to "Supprimer", gossip_path(gossip.id), class:"btn btn-outline-danger", data:{confirm:"Etes vous sûr de vouloir supprimer ce potin ?", method:"DELETE"} %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</main>

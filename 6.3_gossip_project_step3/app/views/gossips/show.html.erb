@@ -1,0 +1,33 @@
+<% if params[:action] == "update" %>
+  <p class="container alert alert-success d-flex justify-content-center" role="alert">The super potin was succesfully edited !</p>
+<% end %>
+
+<h1>Vous êtes sur le potin <br>de <%= @gossip.user.first_name %> <%= @gossip.user.last_name %></h1>
+
+
+<main class="container">
+<div style="margin-bottom: 20px;">
+  <%= link_to "Editer", edit_gossip_path(@gossip.id), class:"btn btn-outline-success" %>
+  <%= link_to "Supprimer", gossip_path(@gossip.id), class:"btn btn-outline-danger", data:{confirm:"Etes vous sûr de vouloir supprimer ce potin ?", method:"DELETE"} %>
+</div>
+<div class="card">
+  <div class="card-header">
+    <%= @gossip.title %>
+  </div>
+  <div class="card-body">
+    <blockquote class="blockquote mb-0">
+      <p><%= @gossip.content %></p>
+      <footer class="blockquote-footer"><%= link_to "#{@gossip.user.first_name} #{@gossip.user.last_name}", user_path(@gossip.user.id) %> à <%= link_to "#{@gossip.user.city.name}", city_path(@gossip.user.city.id) %></footer>
+    </blockquote>
+  </div>
+</div>
+<div style="margin-top: 20px;"><%= link_to "Retour Accueil", root_path, :class => "btn btn-info" %></div>
+<hr>
+
+<h2>Commentaires</h2>
+
+<div>
+  <%= render 'comments/index'%>
+  <%= render 'comments/new'%>
+</div>
+</main>

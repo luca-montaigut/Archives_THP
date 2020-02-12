@@ -1,0 +1,23 @@
+<% if @gossip.errors.any? %>
+    <% @gossip.errors.full_messages.each do |message| %>
+      <p class="alert alert-danger d-flex justify-content-center" role="alert"><%= message %></p>
+    <% end %>
+<% end %>
+
+<div class="container mt-5 form-group">
+ <%= form_tag url_for(action: 'update'), method: "patch" do %>
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+      <%= label_tag 'Titre du potin' %>
+      <%= text_field_tag 'title', @gossip.title, class:"form-control" %>
+      <br /> <br />
+
+      <%= label_tag 'Contenu du potin' %>
+      <%= text_area_tag 'content', @gossip.content, class:"form-control" %>
+      <br /> <br />
+
+      <%= submit_tag "Editer le potin", class:"btn btn-primary"%>
+
+    <% end %>
+    <div style="margin-top: 20px;"><%= link_to "Retour Accueil", root_path, :class => "btn btn-info" %></div>
+</div>

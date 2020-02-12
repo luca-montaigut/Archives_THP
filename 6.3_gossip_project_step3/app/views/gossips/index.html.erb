@@ -1,0 +1,39 @@
+  <div>
+    <%if params[:first_name] == nil%>
+      <h1>Bienvenue cher Visiteur</h1>
+    <%else%>
+      <h1>Bienvenue <%= params[:first_name] %></h1>
+    <% end %>
+  </div>
+
+<% if params[:action] == "create" %>
+  <p class="container alert alert-success d-flex justify-content-center" role="alert">The super potin was succesfully saved !</p>
+<% elsif params[:action] == "destroy" %>
+  <p class="container alert alert-success d-flex justify-content-center" role="alert">The shitty potin was motherfucking deleted !</p>
+<% end %>
+
+  <div class="container d-flex justify-content-center" style="margin-bottom: 20px; margin-top: 20px;"><%= link_to "Nouveau potin", new_gossip_path, :class => "btn btn-info" %></div>
+
+<main class="container">
+  <h3>Voici la liste des potins les plus croustillants du web :</h3>
+  <p>Cliquez sur le potin de votre choix pour en savoir plus ;)</p>
+  <div class="row row-cols-5 d-flex justify-content-center">
+    <% Gossip.all.sort.each do |gossip| %>
+      <div class="card border-info text-center bg-light my-3 mx-3" style="max-width: 18rem;"> 
+        <div class="card-body">
+          <h5 class="card-title"><%= gossip.user.first_name %></h5>
+          <p class="card-text"><%= gossip.title %></p>
+        </div>
+        <div class="card-footer">
+          <%= link_to "Voir plus", gossip_path(gossip.id), class:"btn btn-outline-info" %>
+          <%= link_to "Editer", edit_gossip_path(gossip.id), class:"btn btn-outline-success" %>
+          <%= link_to "Supprimer", gossip_path(gossip.id), class:"btn btn-outline-danger", data:{confirm:"Etes vous sûr de vouloir supprimer ce potin ?", method:"DELETE"} %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</main>
+
+
+
+
