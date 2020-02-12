@@ -5,18 +5,23 @@ class GossipsController < ApplicationController
   def show
     @gossip = Gossip.find(params[:id])
     @comment = Comment.new
-
+    @tags = JoinTableTagGossip.all.map{|join| join.gossip_id == @gossip.id ? join.tag.title : nil}.compact    
     @comments = @gossip.comments
   end
 
   def new
     @gossip = Gossip.new
+    @tag = JoinTableTagGossip.new
+    @tags = Tag.all
   end
 
   def create
+    @tags = Tag.all
     @gossip = Gossip.new(title: params[:title], content: params[:content], user_id: params[:user])
-
-    if @gossip.save 
+    if @gossip.save && params[:tag] != ""
+      @tag = JoinTableTagGossip.create(tag_id: Tag.find(params[:tag]).id, gossip_id: @gossip.id) 
+      render :index
+    elsif @gossip.save && params[:tag] == ""
       render :index
     else
       render :new
@@ -24,17 +29,23 @@ class GossipsController < ApplicationController
   end
 
   def edit
+    @tags = Tag.all
     @gossip = Gossip.find(params[:id])
   end
 
   def update
-    @gossip = Gossip.find(params[:id])
+    show
+    @tag = JoinTableTagGossip.find_by(gossip_id: @gossip.id)
     if @gossip.update(title: params[:title], content: params[:content])
-      puts params
-      render :show
-    else
-      puts params
-      render :edit
+      if params[:tag] == "" && @tag = nil
+        puts params
+        render :show
+      else 
+        @tag != nil ? @tag.update(tag_id: Tag.find(params[:tag]).id, gossip_id: @gossip.id) : JoinTableTagGossip.create(tag_id: Tag.find(params[:tag]).id, gossip_id: @gossip.id) 
+        puts params
+        show
+        render :show
+      end
     end
   end
 

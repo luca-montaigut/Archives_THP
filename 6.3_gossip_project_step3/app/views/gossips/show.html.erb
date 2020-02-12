@@ -1,5 +1,9 @@
 <% if params[:action] == "update" %>
-  <p class="container alert alert-success d-flex justify-content-center" role="alert">The super potin was succesfully edited !</p>
+  <div class="container alert alert-success d-flex justify-content-center alert-dismissible fade show" role="alert">The super potin was succesfully edited !
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
 <% end %>
 
 <h1>Vous êtes sur le potin <br>de <%= @gossip.user.first_name %> <%= @gossip.user.last_name %></h1>
@@ -23,6 +27,11 @@
 </div>
 <div style="margin-top: 20px;"><%= link_to "Retour Accueil", root_path, :class => "btn btn-info" %></div>
 <hr>
+
+<h2>Tags</h2>
+<% @tags.each do |tag| %>
+  <%=tag%>
+<% end %>
 
 <h2>Commentaires</h2>
 

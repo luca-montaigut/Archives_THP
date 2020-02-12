@@ -8,7 +8,8 @@ Rails.application.routes.draw do
 
   #gossips
   resources :gossips do
-    resources :comments
+    resources :comments, only: [:create, :edit, :update, :destroy]
+    resources :tags
   end
 
   #users

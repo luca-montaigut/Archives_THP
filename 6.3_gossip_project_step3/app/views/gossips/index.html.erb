@@ -7,9 +7,17 @@
   </div>
 
 <% if params[:action] == "create" %>
-  <p class="container alert alert-success d-flex justify-content-center" role="alert">The super potin was succesfully saved !</p>
+  <div class="container alert alert-success d-flex justify-content-center alert-dismissible fade show" role="alert">The super potin was succesfully saved !
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
 <% elsif params[:action] == "destroy" %>
-  <p class="container alert alert-success d-flex justify-content-center" role="alert">The shitty potin was motherfucking deleted !</p>
+  <div class="container alert alert-success d-flex justify-content-center alert-dismissible fade show" role="alert">The shitty potin was motherfucking deleted !
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
 <% end %>
 
   <div class="container d-flex justify-content-center" style="margin-bottom: 20px; margin-top: 20px;"><%= link_to "Nouveau potin", new_gossip_path, :class => "btn btn-info" %></div>
@@ -25,9 +33,9 @@
           <p class="card-text"><%= gossip.title %></p>
         </div>
         <div class="card-footer">
-          <%= link_to "Voir plus", gossip_path(gossip.id), class:"btn btn-outline-info" %>
-          <%= link_to "Editer", edit_gossip_path(gossip.id), class:"btn btn-outline-success" %>
-          <%= link_to "Supprimer", gossip_path(gossip.id), class:"btn btn-outline-danger", data:{confirm:"Etes vous sûr de vouloir supprimer ce potin ?", method:"DELETE"} %>
+          <%= link_to "Voir plus", gossip_path(gossip.id), class:"btn btn-outline-info mx-1 my-1" %>
+          <%= link_to "Editer", edit_gossip_path(gossip.id), class:"btn btn-outline-success mx-1 my-1" %>
+          <%= link_to "Supprimer", gossip_path(gossip.id), class:"btn btn-outline-danger mx-1 my-1", data:{confirm:"Etes vous sûr de vouloir supprimer ce potin ?", method:"DELETE"} %>
         </div>
       </div>
     <% end %>

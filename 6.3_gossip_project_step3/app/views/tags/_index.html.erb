@@ -1,0 +1,12 @@
+
+
+<div class="container mt-5 form-group">
+ <%= form_tag gossip_tags_path(@gossip), method: "post" do %>
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+      <%=select_tag "tag", options_for_select(@tags.map {|t| t.title})%>
+
+      <%= submit_tag "tagger", class:"btn btn-primary"%>
+
+    <% end %>
+</div>

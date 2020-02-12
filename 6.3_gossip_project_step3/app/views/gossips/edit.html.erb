@@ -16,6 +16,9 @@
       <%= text_area_tag 'content', @gossip.content, class:"form-control" %>
       <br /> <br />
 
+      <%=select_tag "tag", options_from_collection_for_select(@tags, :id, :title), include_blank: true%>
+      <br /> <br />
+
       <%= submit_tag "Editer le potin", class:"btn btn-primary"%>
 
     <% end %>

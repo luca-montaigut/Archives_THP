@@ -28,7 +28,7 @@ User.create(
   description: "You can't see me but i'm not John Cena",
   email: "anonymous@email.com",
   age:rand(13..100),
-  city_id: City.find(rand(City.first.id..City.last.id)).id
+  city_id: City.all.sample.id
 )
 
 
@@ -46,7 +46,7 @@ end
 
 25.times do
 Gossip.create(
-  title: Faker::Name.first_name,
+  title: Faker::Book.title,
   content: Faker::Hipster.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 4),
   user_id: User.all.sample.id
 )
@@ -54,7 +54,7 @@ end
 
 40.times do
   Comment.create(
-    content: Faker::Hipster.sentence,
+    content: Faker::TvShows::Simpsons.quote,
     user_id: User.all.sample.id,
     gossip_id: Gossip.all.sample.id
   )
@@ -66,8 +66,8 @@ end
 
 30.times do
 JoinTableTagGossip.create(
-  tag_id: Tag.find(rand(Tag.first.id..Tag.last.id)).id,
-  gossip_id: Gossip.find(rand(Gossip.first.id..Gossip.last.id)).id
+  tag_id: Tag.all.sample.id,
+  gossip_id: Gossip.all.sample.id
 )
 end
 
