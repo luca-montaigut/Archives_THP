@@ -1,0 +1,45 @@
+
+  <h1>Profil de <%= @current_user.first_name %> <%= @current_user.last_name %></h1>
+
+<main class="container">
+<div class="card" >
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Description : <%= @current_user.description %></li>
+    <li class="list-group-item">Email : <%= @current_user.email %></li>
+    <li class="list-group-item">Age : <%= @current_user.age %></li>
+    <li class="list-group-item">Ville : <%= link_to "#{@current_user.city.name}", city_path(@current_user.city.id) %></li>
+  </ul>
+</div>
+
+  <h3>Les autres potins de l'auteur</h3>
+  <div class="row row-cols-5 d-flex justify-content-center">
+    <% Gossip.all.each do |gossip| %>
+      <% if gossip.user_id == @current_user.id %>
+        <div class="card border-info text-center bg-light my-3 mx-3" style="max-width: 18rem;"> 
+          <div class="card-body">
+            <h5 class="card-title"><%= gossip.user.first_name %></h5>
+            <p class="card-text"><%= gossip.title %></p>
+          </div>
+          <div class="card-footer">
+          <%= gossip.likes.count %>
+            <%if current_user %>
+              <% if gossip.likes.map{|like| like.user_id == current_user.id ? like : nil}.compact == [] %>
+                <%= link_to "", gossip_like_index_path(gossip.id), class:"far fa-heart mx-1 my-1", style:"color:#ff565d;", data:{method:"POST"} %>
+              <%else%>
+                <%= link_to "", gossip_like_path(gossip.id, current_user.id), class:"fas fa-heart mx-1 my-1", style:"color:#ff565d;", data:{method:"DELETE"} %>
+              <%end%>
+            <%else%>
+              <%= link_to "", gossip_like_index_path(gossip.id), class:"far fa-heart mx-1 my-1", style:"color:#ff565d;", data:{method:"POST"} %>
+            <%end%>
+            <%= link_to "Voir plus", gossip_path(gossip.id), class:"btn btn-outline-info" %>
+            <% if current_user%>
+              <% if current_user.id == gossip.user_id%>
+                <%= link_to "", user_path(current_user.id), class:"fas fa-star mx-1 my-1", style:"color:#efd807;" %>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</main>

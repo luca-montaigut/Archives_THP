@@ -1,0 +1,34 @@
+<% if params[:commit] == "Login" %>
+  <div class="container alert alert-danger d-flex justify-content-center alert-dismissible fade show" role="alert">Wrong motherfucker wrong !
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+<% elsif params[:controller] != "sessions" %>
+  <div class="container alert alert-danger d-flex justify-content-center alert-dismissible fade show" role="alert">Merci de vous identifier pour visiter cette page
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+<% end %>
+
+<div class="container mt-5 form-group">
+ <%= form_tag sessions_path, method: "post" do %>
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+      <strong><%= label_tag 'e-mail' %></strong>
+      <%= text_field_tag 'email', @user.email, class:"form-control" %>
+      <br /> 
+
+      <strong><%= label_tag 'Mot de passe' %></strong>
+      <%= text_field_tag 'password', @user.email, class:"form-control", type:"password" %>
+      <br /> 
+
+      <div class="d-flex justify-content-center"><%= submit_tag "Se connecter", class:"btn btn-success btn-lg"%></div>
+
+    <% end %>
+      <hr>
+      <h1>Pas encore de compte ? </h1>
+      <br/>
+    <div style="margin-top: 10px;" class="d-flex justify-content-center"><%= link_to "S'inscrire", new_user_path, :class => "btn btn-info btn-lg" %></div>
+</div>

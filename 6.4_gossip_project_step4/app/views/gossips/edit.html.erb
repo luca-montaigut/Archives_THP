@@ -1,0 +1,37 @@
+<% if @gossip.errors.any? %>
+    <% @gossip.errors.full_messages.each do |message| %>
+      <p class="alert alert-danger d-flex justify-content-center" role="alert"><%= message %></p>
+    <% end %>
+<% end %>
+
+<div class="container mt-2 form-group">
+ <%= form_tag url_for(action: 'update'), method: "patch" do %>
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+      <strong><%= label_tag 'Titre du potin' %></strong>
+      <%= text_field_tag 'title', @gossip.title, class:"form-control", required: true %>
+      <br /> 
+
+      <strong><%= label_tag 'Contenu du potin' %></strong>
+      <%= text_area_tag 'content', @gossip.content, class:"form-control", required: true %>
+      <br /> 
+
+      <div class="d-flex justify-content-center"><strong class="mx-2"><%= label_tag 'Tags actuels : ' %></strong>
+      <% @current_tags.each do |tag| %>
+        <%=tag.title%>
+      <% end %></div>
+
+      <strong><%= label_tag 'Ajouter un tag' %></strong>
+      <%=select_tag "tag", options_from_collection_for_select(@tags, :id, :title), class:"form-control", include_blank: true%>
+      <br /> 
+
+      <strong><%= label_tag 'Supprimer un tag' %></strong>
+      <%=select_tag "delete_tag", options_from_collection_for_select(@current_tags, :id, :title), class:"form-control", include_blank: true%>
+      <br /> 
+
+      <div class="d-flex justify-content-center"><%= submit_tag "Editer le potin", class:"btn btn-success btn-lg"%></div>
+
+    <% end %>
+    <hr>
+    <div style="margin-top: 10px;" class="d-flex justify-content-center"><%= link_to "Retour Accueil", root_path, :class => "btn btn-info btn-sm" %></div>
+</div>

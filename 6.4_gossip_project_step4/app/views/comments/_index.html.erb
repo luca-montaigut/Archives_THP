@@ -1,0 +1,18 @@
+<div><% @comments.sort_by(&:created_at).each do |comment| %>
+  <div class="card bg-light text-right my-2">
+    <div class="card-header ">
+      <p ><%= comment.content %></p>
+      <footer class="blockquote-footer">
+        <strong><%= link_to "#{comment.user.first_name + " " + comment.user.last_name}", user_path(comment.user.id) %></strong>
+          <cite title="Source Title">
+            <% if current_user.id == comment.user_id%>
+              <%= link_to "Editer", edit_gossip_comment_path(@gossip.id, comment.id), class:"badge badge-success" %>
+              <%= link_to "Supprimer", gossip_comment_path(@gossip.id, comment.id), class:"badge badge-danger", data:{confirm:"Etes vous sûr de vouloir supprimer ce potin ?", method:"DELETE"} %>
+            <% end %>
+          </cite>
+      </footer>
+    </div>
+  </div>
+<% end %></div>
+
+

@@ -1,0 +1,50 @@
+<% if @user.errors.any? %>
+    <% @user.errors.full_messages.each do |message| %>
+      <div class="container alert alert-danger d-flex justify-content-center alert-dismissible fade show" role="alert"><%= message %>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    <% end %>
+<% end %>
+
+<div class="container mt-5 form-group">
+ <%= form_tag url_for(action: 'create'), method: "post" do %>
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+      <strong><%= label_tag 'Prénom' %></strong>
+      <%= text_field_tag 'first_name', @user.first_name, class:"form-control", required: true %>
+      <br /> 
+
+      <strong><%= label_tag 'Nom' %></strong>
+      <%= text_field_tag 'last_name', @user.last_name, class:"form-control", required: true %>
+      <br /> 
+
+      <strong><%= label_tag 'Description' %></strong>
+      <%= text_area_tag 'description', @user.description, class:"form-control", required: true %>
+      <br /> 
+
+      <strong><%= label_tag 'e-mail' %></strong>
+      <%= text_field_tag 'email', @user.email, class:"form-control", required: true %>
+      <br /> 
+
+      <strong><%= label_tag 'Mot de passe' %></strong>
+      <%= text_field_tag 'password', @user.password, class:"form-control", type:"password", required: true %>
+      <br /> 
+
+      <strong><%= label_tag 'Confirmation du mot de passe' %></strong>
+      <%= text_field_tag 'passwordconfirm', @user.password_confirmation, class:"form-control", type:"password", required: true %>
+      <br /> 
+
+      <strong><%= label_tag 'Age' %>
+      <%= text_field_tag 'age', @user.age, class:"form-control", required: true %></strong>
+      <br /> 
+
+      <strong><%= label_tag 'City' %>
+      <%= text_field_tag 'city', @user.city, class:"form-control", required: true %></strong>
+      <br /> 
+
+      <div class="d-flex justify-content-center"><%= submit_tag "S'inscrire", class:"btn btn-success btn-lg"%></strong></div>
+
+    <% end %>
+</div>

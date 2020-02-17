@@ -1,0 +1,11 @@
+<div class="container mt-5 form-group">
+ <%= form_tag gossip_comments_path(@gossip), method: "post" do %>
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+      <div class="d-flex flex-row justify-content-center">
+
+      <%= text_field_tag 'content', @comment.content, class:"form-control mx-2", placeholder:"Lache ton comm !" %>
+
+      <%= submit_tag "Commenter", class:"btn btn-primary"%>
+      </div>
+    <% end %>
+</div>

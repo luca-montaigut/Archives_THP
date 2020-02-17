@@ -1,0 +1,72 @@
+<% if params[:action] == "create" && params[:commit] == "Créer un potin" %>
+  <div class="container alert alert-success d-flex justify-content-center alert-dismissible fade show" role="alert">The super potin was succesfully saved !
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+<% elsif params[:action] == "create" && params[:commit] == "S'inscrire" %>
+  <div class="container alert alert-success d-flex justify-content-center alert-dismissible fade show" role="alert">Un super user was succesfully created !
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+<% elsif params[:action] == "destroy" %>
+  <div class="container alert alert-success d-flex justify-content-center alert-dismissible fade show" role="alert">The shitty potin was motherfucking deleted !
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+<% end %>
+
+<div>
+  <%if session[:user_id] != nil%>
+    <h1>Bienvenue <%= current_user.first_name %></h1>
+  <%else %>
+    <%if params[:first_name] == nil%>
+      <h1>Bienvenue cher Visiteur</h1>
+    <%elsif params[:action] == "create" && params[:commit] == "S'inscrire"%>
+      <h1>Bienvenue parmi nous <%= params[:first_name] %></h1>
+    <%else %>
+      <h1>Bienvenue <%= params[:first_name] %></h1>
+  <% end %>
+  <% end %>
+</div>
+
+<div class="container d-flex justify-content-center" style="margin-bottom: 20px; margin-top: 20px;"><%= link_to "Nouveau potin", new_gossip_path, :class => "btn btn-info" %></div>
+
+<main class="container">
+  <h3>Voici la liste des potins les plus croustillants du web :</h3>
+  <p>Cliquez sur le potin de votre choix pour en savoir plus ;)</p>
+  <div class="row row-cols-5 row-cols-md-3  p-md-0 m-md-0 d-flex justify-content-center">
+    <% Gossip.all.sort.each do |gossip| %>
+      <div class="card border-info text-center bg-light my-3 mx-3" style="max-width: 18rem;"> 
+        <div class="card-body">
+          <h5 class="card-title"><%= gossip.user.first_name %></h5>
+          <p class="card-text"><%= gossip.title %></p>
+        </div>
+        <div class="card-footer">
+          <%= gossip.likes.count %>
+            <%if current_user %>
+              <% if gossip.likes.map{|like| like.user_id == current_user.id ? like : nil}.compact == [] %>
+                <%= link_to "", gossip_like_index_path(gossip.id), class:"far fa-heart mx-1 my-1", style:"color:#ff565d;", data:{method:"POST"} %>
+              <%else%>
+                <%= link_to "", gossip_like_path(gossip.id, current_user.id), class:"fas fa-heart mx-1 my-1", style:"color:#ff565d;", data:{method:"DELETE"} %>
+              <%end%>
+            <%else%>
+              <%= link_to "", gossip_like_index_path(gossip.id), class:"far fa-heart mx-1 my-1", style:"color:#ff565d;", data:{method:"POST"} %>
+            <%end%>
+          <%= link_to "Voir plus", gossip_path(gossip.id), class:"btn btn-outline-info mx-1 my-1" %>
+          <% if current_user%>
+            <% if current_user.id == gossip.user_id%>
+              <%= link_to "", user_path(current_user.id), class:"fas fa-star mx-1 my-1", style:"color:#efd807;" %>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</main>
+
+
+
+
