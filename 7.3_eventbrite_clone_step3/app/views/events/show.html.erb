@@ -1,0 +1,69 @@
+<main class="container">
+<p id="notice"><%= notice %></p>
+
+<h1 class="text-center"><%= @event.title %></h1>
+
+
+<div class="card my-5">
+  <div class="card-header">
+      <strong>Email de l'organisateur : </strong><%= @admin.email %>
+  <!--  <%= link_to 'Voir profil', user_path(@admin.id) %>  sortir également la première ligne de la methode show dans le controleur-->
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"><strong>Début : </strong><%= @event.start_date.strftime('%d/%m/%Y à %H:%M') %></li>
+    <li class="list-group-item"><strong>Fin : </strong><%= @event.end_date.strftime('%d/%m/%Y à %H:%M') %></li>
+    <li class="list-group-item"><strong>Prix : </strong><%= @event.price %> €</li>
+    <li class="list-group-item"><strong>Où : </strong><%= @event.location %></li>
+    <li class="list-group-item"><strong>Description : </strong><%= @event.description %></li>
+  </ul>
+</div>
+
+<% if user_signed_in?%>
+  <% if current_user.id != @admin.id && @guests.include?(current_user) == false %>
+    <div class="text-center">
+      <%= form_tag event_attendances_path(@event.id) do %>
+        <article>
+          <% if flash[:error].present? %>
+            <div id="error_explanation">
+              <p><%= flash[:error] %></p>
+            </div>
+          <% end %>
+          <label class="amount">
+            <span>Rejoignez l'évènement en réglant les frais d'inscriptions</span>
+          </label>
+        </article>
+
+        <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                data-description="Inscription à <%=@event.title%>"
+                data-email=<%=current_user.email%>
+                data-currency= 'eur',
+                data-amount=<%=@event.price * 100%>
+                data-locale="auto"></script>
+      <% end %>
+    </div>
+  <%else current_user.id != @admin.id && @guests.include?(current_user) %>
+    <h3 class="text-center"> Vous participez déjà à cet évènement </h3>
+  <%end%>
+<%else%>
+  <div class="text-center">
+    <%= link_to "Rejoindre l'évènement", new_user_session_path, class:"btn btn-outline-primary btn-lg" %> 
+  </div>
+<% end %>
+
+<% if user_signed_in? && current_user.id == @admin.id %>
+<%= link_to 'Editer', edit_event_path(@event), class:"btn btn-success" %> 
+<%= link_to 'Supprimer', @event, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger" %>
+<% end %>
+
+<h2> Participants </h2>
+<br>
+<% @guests.each do |guest| %>
+  <p>
+    <%= guest.first_name %> <%= guest.last_name %> <%= link_to "Voir profil", user_path(guest.id) %>
+  </p>  
+<%end%>
+<br>
+
+<%= link_to '« Retour Accueil', events_path, class:"btn btn-primary" %>
+</main>

@@ -1,0 +1,64 @@
+<%if notice%>
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+  <%= notice %>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<%end%>
+
+<main class="container">
+
+<h1 class="text-center"> Profil de <%=@user.first_name%> <%=@user.last_name%></h1>
+
+  <div class="d-flex flex-row my-5">
+    <div class="mx-3">
+      <%if @user.avatar.attached?%>
+        <%= image_tag @user.avatar.variant(resize: '200x200'), alt: 'avatar' %>
+      <%else%>
+        <%= image_tag("default.jpg")%>
+      <%end%>
+    </div>
+
+
+    <div class="mx-3">
+      <p><strong>First name : </strong><%= @user.first_name %></p>
+      <p><strong>Last name : </strong><%= @user.last_name %></p>
+      <p><strong>Email : </strong><%= @user.email %></p>
+      <p><strong>Description : </strong><%= @user.description %></p>
+    </div>
+  </div>
+
+<div class="text-center">
+  <%if current_user.id == @user.id %>
+    <%= link_to 'Editer le compte', edit_user_registration_path, class:"btn btn-outline-success" %> |
+    <%= link_to 'Editer le profil', edit_user_path, class:"btn btn-success" %> |
+    <%= link_to '« Retour Accueil', root_path, class:"btn btn-primary" %>
+  <% end %>
+</div>
+
+<h2 class="text-center my-5">Les évènements organisés par <%=@user.first_name%></h2>
+
+<% Event.all.each do |event| %>
+  <% if @user.id == event.admin.id %>
+    <div class="card my-3">
+      <div class="card-header">
+        <h4><%= event.title %></h4>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">le <%= event.start_date %> à <%= event.location %></h5>
+        <p class="card-text"><%= event.description %></p>
+        <%= link_to 'Show', event, class:"btn btn-primary" %> 
+        <% if user_signed_in? && current_user.id == event.admin.id %>
+          <%= link_to 'Edit', edit_event_path(event), class:"btn btn-success" %> 
+          <%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger" %>
+        <% end %>
+      </div>
+      <div class="card-footer">
+        Prix : <%= event.price %> € // Durée : <%= event.duration %> min
+      </div>
+    </div>
+  <% end %>
+<% end %>
+
+</main>

@@ -1,0 +1,95 @@
+<%if notice%>
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+  <%= notice %>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<%end%>
+
+
+<header class="container d-flex flex-column justify-centent-center">
+
+<h1 class="text-center mt-2"><%= @event.title %></h1>
+
+<%if @event.cover.attached?%>
+  <%= image_tag @event.cover.variant(resize: '1200x300'), alt: 'cover' %>
+<%else%>
+  <%= image_tag("default-event.jpg")%>
+<%end%>
+
+</header>
+
+<main class="container">
+
+<div class="card my-5">
+  <div class="card-header">
+      <strong>Organisateur : </strong><%= link_to "#{@admin.first_name + " " + @admin.last_name}", user_path(@admin.id)%>
+  <!--  <%= link_to 'Voir profil', user_path(@admin.id) %>  sortir également la première ligne de la methode show dans le controleur-->
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"><strong>Début : </strong><%= @event.start_date.strftime('%d/%m/%Y à %H:%M') %></li>
+    <li class="list-group-item"><strong>Fin : </strong><%= @event.end_date.strftime('%d/%m/%Y à %H:%M') %></li>
+    <li class="list-group-item"><strong>Prix : </strong><%= @event.price %> €</li>
+    <li class="list-group-item"><strong>Où : </strong><%= @event.location %></li>
+    <li class="list-group-item"><strong>Description : </strong><%= @event.description %></li>
+  </ul>
+</div>
+
+<% if user_signed_in? && current_user.id == @admin.id %>
+<div class="d-flex flex-column justify-content-center mb-1">
+<%= link_to 'Editer', edit_event_path(@event), class:"btn btn-success" %> 
+<%= link_to 'Supprimer', @event, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger" %>
+</div>
+<br>
+<% end %>
+
+<% if user_signed_in?%>
+  <% if current_user.id != @admin.id && @guests.include?(current_user) == false %>
+    <div class="text-center">
+      <%= form_tag event_attendances_path(@event.id) do %>
+        <article>
+          <% if flash[:error].present? %>
+            <div id="error_explanation">
+              <p><%= flash[:error] %></p>
+            </div>
+          <% end %>
+          <label class="amount">
+            <span>Rejoignez l'évènement en réglant les frais d'inscriptions</span>
+          </label>
+        </article>
+
+        <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                data-description="Inscription à <%=@event.title%>"
+                data-email=<%=current_user.email%>
+                data-currency= 'eur',
+                data-amount=<%=@event.price * 100%>
+                data-locale="auto"></script>
+      <% end %>
+    </div>
+  <%elsif current_user.id != @admin.id && @guests.include?(current_user) %>
+    <h3 class="text-center"> Vous participez déjà à cet évènement </h3>
+    <%else current_user.id == @admin.id%>
+  <%end%>
+<%else%>
+  <div class="text-center">
+    <%= link_to "Rejoindre l'évènement", new_user_session_path, class:"btn btn-outline-primary btn-lg" %> 
+  </div>
+<% end %>
+
+
+<h2 class="mt-5 mb-2"> Liste des participants </h2>
+<br>
+<table class="container">
+    <% @guests.each do |guest| %>
+      <tr class="row border-dark border-bottom">
+        <td class="col-9"><%= guest.first_name %> <%= guest.last_name %></td> 
+        <td class="col-3"><%= link_to "Voir profil", user_path(guest.id) %></td>
+      </tr>  
+    <%end%>
+</table>
+<br>
+
+<%= link_to '« Retour Accueil', events_path, class:"btn btn-primary mb-5" %>
+</main>

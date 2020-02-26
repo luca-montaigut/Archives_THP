@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Salut <%= @user.first_name %> et bienvenue chez nous !</h1>
+    <p>
+      Tu t'es inscrit sur lm-eventbrite.herokuapp.com en utilisant l'e-mail suivant : <%= @user.email %>.
+    </p>
+    <p>
+      Pour accéder à ton espace client, connecte-toi via : <%= @url %> ou en cliquant sur : 
+    </p>
+    <br />
+    <p>
+      <a href="<%= @url %>" style="font-size:16px;font-family:Helvetica,Arial,sans-serif;color:#ffffff;text-decoration:none;border-radius:3px;padding:12px 18px;border:1px solid #007bff;background-color:#007bff" target="_blank">Se connecter</a>
+    </p>
+    <br />
+    <p> À très vite sur lm-eventbrite.herokuapp.com !
+  </body>
+</html>

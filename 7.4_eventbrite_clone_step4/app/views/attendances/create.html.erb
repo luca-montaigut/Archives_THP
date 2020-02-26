@@ -1,0 +1,9 @@
+<br><br>
+<div class="text-center">
+<h4>Félicitations <%=current_user.first_name%> !</h4>
+<h2>Votre paiement de <strong><%=@event.price %>€</strong> a bien été pris en compte!</h2>
+<p>Vous êtes désormais inscrit à : <%=@event.title%></p>
+<p>Si vous n'êtes pas automatiquement redirigé(e) vers la page de l'évènement, merci de cliquez sur le bouton ci-dessous</p>
+<meta HTTP-EQUIV="REFRESH" content="5; <%=event_path(@event.id)%>">
+<%= link_to "Rejoindre l'évènement", event_path(@event.id), class:"btn btn-outline-primary btn-lg" %> 
+</div>

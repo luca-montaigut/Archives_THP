@@ -1,0 +1,62 @@
+  <%= form_with(model: event, local: true) do |form| %>
+    <% if event.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+        <ul>
+        <% event.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="form-group">
+      <%= form.label :title %>
+      <%= form.text_field :title, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :description %>
+      <%= form.text_area :description, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :start_date %>
+      <%= form.datetime_select :start_date, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :duration %>
+      <%= form.range_field :duration, within: 0..120, step: 5, oninput:"updateTextInput(this.value)", id:"inputRange", class:"form-control" %>
+      <%= form.number_field :fake, within: 5..120, value: 60, id: "textInput", oninput: "updateRangeInput(this.value)"%>
+    </div>
+
+
+    <div class="form-group">
+      <%= form.label :price %>
+      <%= form.number_field :price, within: 1..1000, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :location %>
+      <%= form.text_field :location, class: "form-control" %>
+    </div>
+
+    <%= form.hidden_field :admin_id, value: current_user.id %>
+
+    <div class="actions">
+      <%= form.submit %>
+    </div>
+  <% end %>
+
+<script>
+function updateTextInput(val) {
+          document.getElementById('textInput').value=val; 
+        }
+function updateRangeInput(val) {
+  document.getElementById('inputRange').value=val; 
+}
+</script>
+
+<br><br>

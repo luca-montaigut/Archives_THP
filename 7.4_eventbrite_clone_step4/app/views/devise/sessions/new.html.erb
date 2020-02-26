@@ -1,0 +1,31 @@
+<main class="container mt-5">
+<h2 class="text-center">Se connecter</h2>
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="form-group">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :password %><br />
+    <%= f.password_field :password, autocomplete: "current-password", class:"form-control" %>
+  </div>
+
+  <% if devise_mapping.rememberable? %>
+    <div class="form-group">
+      <%= f.check_box :remember_me %>
+      <%= f.label :remember_me %>
+    </div>
+  <% end %>
+
+  <div class="actions text-center">
+    <%= f.submit "Connexion", class:"btn btn-success btn-lg" %>
+  </div>
+<% end %>
+<br>
+<h3 class="text-center">Un problème avec vos identifiants ?</h2>
+<div class="d-flex justify-content-center">
+<%= render "devise/shared/links" %>
+</div>
+</main>

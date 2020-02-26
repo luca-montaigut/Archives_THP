@@ -1,0 +1,289 @@
+I, [2020-02-20T20:56:54.602918 #6317]  INFO -- : [73c9fc33-ab9e-4e74-a02e-3cb7b79c77b5] Started GET "/" for 127.0.0.1 at 2020-02-20 20:56:54 +0100
+I, [2020-02-20T20:56:54.603968 #6317]  INFO -- : [73c9fc33-ab9e-4e74-a02e-3cb7b79c77b5] Processing by EventsController#index as HTML
+I, [2020-02-20T20:56:54.613293 #6317]  INFO -- : [73c9fc33-ab9e-4e74-a02e-3cb7b79c77b5]   Rendering events/index.html.erb within layouts/application
+I, [2020-02-20T20:56:54.633222 #6317]  INFO -- : [73c9fc33-ab9e-4e74-a02e-3cb7b79c77b5]   Rendered events/index.html.erb within layouts/application (19.7ms)
+I, [2020-02-20T20:56:54.633551 #6317]  INFO -- : [73c9fc33-ab9e-4e74-a02e-3cb7b79c77b5] Completed 500 Internal Server Error in 29ms
+F, [2020-02-20T20:56:54.635416 #6317] FATAL -- : [73c9fc33-ab9e-4e74-a02e-3cb7b79c77b5]   
+F, [2020-02-20T20:56:54.635570 #6317] FATAL -- : [73c9fc33-ab9e-4e74-a02e-3cb7b79c77b5] ActionView::Template::Error (FATAL:  authentification peer échouée pour l'utilisateur « eventbrite_clone »
+):
+F, [2020-02-20T20:56:54.635856 #6317] FATAL -- : [73c9fc33-ab9e-4e74-a02e-3cb7b79c77b5]     14: <main class="container">
+[73c9fc33-ab9e-4e74-a02e-3cb7b79c77b5]     15: <h1 class="d-flex justify-content-center">Liste des évènements à venir</h1>
+[73c9fc33-ab9e-4e74-a02e-3cb7b79c77b5]     16: 
+[73c9fc33-ab9e-4e74-a02e-3cb7b79c77b5]     17: <% @events.each do |event| %>
+[73c9fc33-ab9e-4e74-a02e-3cb7b79c77b5]     18: 
+[73c9fc33-ab9e-4e74-a02e-3cb7b79c77b5]     19: <div class="card my-3">
+[73c9fc33-ab9e-4e74-a02e-3cb7b79c77b5]     20:   <div class="card-header">
+F, [2020-02-20T20:56:54.635922 #6317] FATAL -- : [73c9fc33-ab9e-4e74-a02e-3cb7b79c77b5]   
+F, [2020-02-20T20:56:54.635978 #6317] FATAL -- : [73c9fc33-ab9e-4e74-a02e-3cb7b79c77b5] app/views/events/index.html.erb:17:in `_app_views_events_index_html_erb__3753380628771781024_70301266315100'
+I, [2020-02-20T20:57:06.024149 #6317]  INFO -- : [bf3b0789-f877-4488-a719-8470703e8192] Started GET "/" for 127.0.0.1 at 2020-02-20 20:57:06 +0100
+I, [2020-02-20T20:57:06.025003 #6317]  INFO -- : [bf3b0789-f877-4488-a719-8470703e8192] Processing by EventsController#index as HTML
+I, [2020-02-20T20:57:06.026561 #6317]  INFO -- : [bf3b0789-f877-4488-a719-8470703e8192]   Rendering events/index.html.erb within layouts/application
+I, [2020-02-20T20:57:06.031233 #6317]  INFO -- : [bf3b0789-f877-4488-a719-8470703e8192]   Rendered events/index.html.erb within layouts/application (4.5ms)
+I, [2020-02-20T20:57:06.031419 #6317]  INFO -- : [bf3b0789-f877-4488-a719-8470703e8192] Completed 500 Internal Server Error in 6ms
+F, [2020-02-20T20:57:06.032657 #6317] FATAL -- : [bf3b0789-f877-4488-a719-8470703e8192]   
+F, [2020-02-20T20:57:06.032750 #6317] FATAL -- : [bf3b0789-f877-4488-a719-8470703e8192] ActionView::Template::Error (FATAL:  authentification peer échouée pour l'utilisateur « eventbrite_clone »
+):
+F, [2020-02-20T20:57:06.032944 #6317] FATAL -- : [bf3b0789-f877-4488-a719-8470703e8192]     14: <main class="container">
+[bf3b0789-f877-4488-a719-8470703e8192]     15: <h1 class="d-flex justify-content-center">Liste des évènements à venir</h1>
+[bf3b0789-f877-4488-a719-8470703e8192]     16: 
+[bf3b0789-f877-4488-a719-8470703e8192]     17: <% @events.each do |event| %>
+[bf3b0789-f877-4488-a719-8470703e8192]     18: 
+[bf3b0789-f877-4488-a719-8470703e8192]     19: <div class="card my-3">
+[bf3b0789-f877-4488-a719-8470703e8192]     20:   <div class="card-header">
+F, [2020-02-20T20:57:06.032995 #6317] FATAL -- : [bf3b0789-f877-4488-a719-8470703e8192]   
+F, [2020-02-20T20:57:06.033042 #6317] FATAL -- : [bf3b0789-f877-4488-a719-8470703e8192] app/views/events/index.html.erb:17:in `_app_views_events_index_html_erb__3753380628771781024_70301266315100'
+I, [2020-02-20T20:57:07.220285 #6317]  INFO -- : [03fbbbea-0a66-4669-96ba-582949ca28d6] Started GET "/" for 127.0.0.1 at 2020-02-20 20:57:07 +0100
+I, [2020-02-20T20:57:07.221519 #6317]  INFO -- : [03fbbbea-0a66-4669-96ba-582949ca28d6] Processing by EventsController#index as HTML
+I, [2020-02-20T20:57:07.223918 #6317]  INFO -- : [03fbbbea-0a66-4669-96ba-582949ca28d6]   Rendering events/index.html.erb within layouts/application
+I, [2020-02-20T20:57:07.229282 #6317]  INFO -- : [03fbbbea-0a66-4669-96ba-582949ca28d6]   Rendered events/index.html.erb within layouts/application (5.2ms)
+I, [2020-02-20T20:57:07.229515 #6317]  INFO -- : [03fbbbea-0a66-4669-96ba-582949ca28d6] Completed 500 Internal Server Error in 8ms
+F, [2020-02-20T20:57:07.230467 #6317] FATAL -- : [03fbbbea-0a66-4669-96ba-582949ca28d6]   
+F, [2020-02-20T20:57:07.230518 #6317] FATAL -- : [03fbbbea-0a66-4669-96ba-582949ca28d6] ActionView::Template::Error (FATAL:  authentification peer échouée pour l'utilisateur « eventbrite_clone »
+):
+F, [2020-02-20T20:57:07.230665 #6317] FATAL -- : [03fbbbea-0a66-4669-96ba-582949ca28d6]     14: <main class="container">
+[03fbbbea-0a66-4669-96ba-582949ca28d6]     15: <h1 class="d-flex justify-content-center">Liste des évènements à venir</h1>
+[03fbbbea-0a66-4669-96ba-582949ca28d6]     16: 
+[03fbbbea-0a66-4669-96ba-582949ca28d6]     17: <% @events.each do |event| %>
+[03fbbbea-0a66-4669-96ba-582949ca28d6]     18: 
+[03fbbbea-0a66-4669-96ba-582949ca28d6]     19: <div class="card my-3">
+[03fbbbea-0a66-4669-96ba-582949ca28d6]     20:   <div class="card-header">
+F, [2020-02-20T20:57:07.230696 #6317] FATAL -- : [03fbbbea-0a66-4669-96ba-582949ca28d6]   
+F, [2020-02-20T20:57:07.230730 #6317] FATAL -- : [03fbbbea-0a66-4669-96ba-582949ca28d6] app/views/events/index.html.erb:17:in `_app_views_events_index_html_erb__3753380628771781024_70301266315100'
+I, [2020-02-20T20:57:07.820303 #6317]  INFO -- : [8b22aea3-6310-4092-a3a0-ed730447abf0] Started GET "/" for 127.0.0.1 at 2020-02-20 20:57:07 +0100
+I, [2020-02-20T20:57:07.821092 #6317]  INFO -- : [8b22aea3-6310-4092-a3a0-ed730447abf0] Processing by EventsController#index as HTML
+I, [2020-02-20T20:57:07.822467 #6317]  INFO -- : [8b22aea3-6310-4092-a3a0-ed730447abf0]   Rendering events/index.html.erb within layouts/application
+I, [2020-02-20T20:57:07.826592 #6317]  INFO -- : [8b22aea3-6310-4092-a3a0-ed730447abf0]   Rendered events/index.html.erb within layouts/application (4.0ms)
+I, [2020-02-20T20:57:07.826811 #6317]  INFO -- : [8b22aea3-6310-4092-a3a0-ed730447abf0] Completed 500 Internal Server Error in 6ms
+F, [2020-02-20T20:57:07.828173 #6317] FATAL -- : [8b22aea3-6310-4092-a3a0-ed730447abf0]   
+F, [2020-02-20T20:57:07.828282 #6317] FATAL -- : [8b22aea3-6310-4092-a3a0-ed730447abf0] ActionView::Template::Error (FATAL:  authentification peer échouée pour l'utilisateur « eventbrite_clone »
+):
+F, [2020-02-20T20:57:07.828481 #6317] FATAL -- : [8b22aea3-6310-4092-a3a0-ed730447abf0]     14: <main class="container">
+[8b22aea3-6310-4092-a3a0-ed730447abf0]     15: <h1 class="d-flex justify-content-center">Liste des évènements à venir</h1>
+[8b22aea3-6310-4092-a3a0-ed730447abf0]     16: 
+[8b22aea3-6310-4092-a3a0-ed730447abf0]     17: <% @events.each do |event| %>
+[8b22aea3-6310-4092-a3a0-ed730447abf0]     18: 
+[8b22aea3-6310-4092-a3a0-ed730447abf0]     19: <div class="card my-3">
+[8b22aea3-6310-4092-a3a0-ed730447abf0]     20:   <div class="card-header">
+F, [2020-02-20T20:57:07.828520 #6317] FATAL -- : [8b22aea3-6310-4092-a3a0-ed730447abf0]   
+F, [2020-02-20T20:57:07.828561 #6317] FATAL -- : [8b22aea3-6310-4092-a3a0-ed730447abf0] app/views/events/index.html.erb:17:in `_app_views_events_index_html_erb__3753380628771781024_70301266315100'
+I, [2020-02-20T20:57:08.149588 #6317]  INFO -- : [57007140-b819-4785-b7a9-3324b84c4b4b] Started GET "/" for 127.0.0.1 at 2020-02-20 20:57:08 +0100
+I, [2020-02-20T20:57:08.150725 #6317]  INFO -- : [57007140-b819-4785-b7a9-3324b84c4b4b] Processing by EventsController#index as HTML
+I, [2020-02-20T20:57:08.152686 #6317]  INFO -- : [57007140-b819-4785-b7a9-3324b84c4b4b]   Rendering events/index.html.erb within layouts/application
+I, [2020-02-20T20:57:08.157116 #6317]  INFO -- : [57007140-b819-4785-b7a9-3324b84c4b4b]   Rendered events/index.html.erb within layouts/application (4.2ms)
+I, [2020-02-20T20:57:08.157385 #6317]  INFO -- : [57007140-b819-4785-b7a9-3324b84c4b4b] Completed 500 Internal Server Error in 6ms
+F, [2020-02-20T20:57:08.158497 #6317] FATAL -- : [57007140-b819-4785-b7a9-3324b84c4b4b]   
+F, [2020-02-20T20:57:08.158697 #6317] FATAL -- : [57007140-b819-4785-b7a9-3324b84c4b4b] ActionView::Template::Error (FATAL:  authentification peer échouée pour l'utilisateur « eventbrite_clone »
+):
+F, [2020-02-20T20:57:08.158917 #6317] FATAL -- : [57007140-b819-4785-b7a9-3324b84c4b4b]     14: <main class="container">
+[57007140-b819-4785-b7a9-3324b84c4b4b]     15: <h1 class="d-flex justify-content-center">Liste des évènements à venir</h1>
+[57007140-b819-4785-b7a9-3324b84c4b4b]     16: 
+[57007140-b819-4785-b7a9-3324b84c4b4b]     17: <% @events.each do |event| %>
+[57007140-b819-4785-b7a9-3324b84c4b4b]     18: 
+[57007140-b819-4785-b7a9-3324b84c4b4b]     19: <div class="card my-3">
+[57007140-b819-4785-b7a9-3324b84c4b4b]     20:   <div class="card-header">
+F, [2020-02-20T20:57:08.158960 #6317] FATAL -- : [57007140-b819-4785-b7a9-3324b84c4b4b]   
+F, [2020-02-20T20:57:08.158987 #6317] FATAL -- : [57007140-b819-4785-b7a9-3324b84c4b4b] app/views/events/index.html.erb:17:in `_app_views_events_index_html_erb__3753380628771781024_70301266315100'
+I, [2020-02-20T20:57:08.418307 #6317]  INFO -- : [235d4c9a-e696-4ff1-9889-0e72e450b730] Started GET "/" for 127.0.0.1 at 2020-02-20 20:57:08 +0100
+I, [2020-02-20T20:57:08.419561 #6317]  INFO -- : [235d4c9a-e696-4ff1-9889-0e72e450b730] Processing by EventsController#index as HTML
+I, [2020-02-20T20:57:08.421288 #6317]  INFO -- : [235d4c9a-e696-4ff1-9889-0e72e450b730]   Rendering events/index.html.erb within layouts/application
+I, [2020-02-20T20:57:08.426819 #6317]  INFO -- : [235d4c9a-e696-4ff1-9889-0e72e450b730]   Rendered events/index.html.erb within layouts/application (5.3ms)
+I, [2020-02-20T20:57:08.427084 #6317]  INFO -- : [235d4c9a-e696-4ff1-9889-0e72e450b730] Completed 500 Internal Server Error in 7ms
+F, [2020-02-20T20:57:08.428627 #6317] FATAL -- : [235d4c9a-e696-4ff1-9889-0e72e450b730]   
+F, [2020-02-20T20:57:08.428744 #6317] FATAL -- : [235d4c9a-e696-4ff1-9889-0e72e450b730] ActionView::Template::Error (FATAL:  authentification peer échouée pour l'utilisateur « eventbrite_clone »
+):
+F, [2020-02-20T20:57:08.428930 #6317] FATAL -- : [235d4c9a-e696-4ff1-9889-0e72e450b730]     14: <main class="container">
+[235d4c9a-e696-4ff1-9889-0e72e450b730]     15: <h1 class="d-flex justify-content-center">Liste des évènements à venir</h1>
+[235d4c9a-e696-4ff1-9889-0e72e450b730]     16: 
+[235d4c9a-e696-4ff1-9889-0e72e450b730]     17: <% @events.each do |event| %>
+[235d4c9a-e696-4ff1-9889-0e72e450b730]     18: 
+[235d4c9a-e696-4ff1-9889-0e72e450b730]     19: <div class="card my-3">
+[235d4c9a-e696-4ff1-9889-0e72e450b730]     20:   <div class="card-header">
+F, [2020-02-20T20:57:08.428970 #6317] FATAL -- : [235d4c9a-e696-4ff1-9889-0e72e450b730]   
+F, [2020-02-20T20:57:08.429003 #6317] FATAL -- : [235d4c9a-e696-4ff1-9889-0e72e450b730] app/views/events/index.html.erb:17:in `_app_views_events_index_html_erb__3753380628771781024_70301266315100'
+I, [2020-02-20T21:29:56.501935 #7941]  INFO -- : [7bbb4277-523a-4702-9c46-489cb97d6f20] Started GET "/" for 127.0.0.1 at 2020-02-20 21:29:56 +0100
+I, [2020-02-20T21:29:56.504021 #7941]  INFO -- : [7bbb4277-523a-4702-9c46-489cb97d6f20] Processing by EventsController#index as HTML
+I, [2020-02-20T21:29:56.515908 #7941]  INFO -- : [7bbb4277-523a-4702-9c46-489cb97d6f20]   Rendering events/index.html.erb within layouts/application
+I, [2020-02-20T21:29:56.530877 #7941]  INFO -- : [7bbb4277-523a-4702-9c46-489cb97d6f20]   Rendered events/index.html.erb within layouts/application (14.8ms)
+I, [2020-02-20T21:29:56.531300 #7941]  INFO -- : [7bbb4277-523a-4702-9c46-489cb97d6f20] Completed 500 Internal Server Error in 27ms
+F, [2020-02-20T21:29:56.532777 #7941] FATAL -- : [7bbb4277-523a-4702-9c46-489cb97d6f20]   
+F, [2020-02-20T21:29:56.532875 #7941] FATAL -- : [7bbb4277-523a-4702-9c46-489cb97d6f20] ActionView::Template::Error (FATAL:  authentification peer échouée pour l'utilisateur « eventbrite_clone »
+):
+F, [2020-02-20T21:29:56.533138 #7941] FATAL -- : [7bbb4277-523a-4702-9c46-489cb97d6f20]     14: <main class="container">
+[7bbb4277-523a-4702-9c46-489cb97d6f20]     15: <h1 class="d-flex justify-content-center">Liste des évènements à venir</h1>
+[7bbb4277-523a-4702-9c46-489cb97d6f20]     16: 
+[7bbb4277-523a-4702-9c46-489cb97d6f20]     17: <% @events.each do |event| %>
+[7bbb4277-523a-4702-9c46-489cb97d6f20]     18: 
+[7bbb4277-523a-4702-9c46-489cb97d6f20]     19: <div class="card my-3">
+[7bbb4277-523a-4702-9c46-489cb97d6f20]     20:   <div class="card-header">
+F, [2020-02-20T21:29:56.533219 #7941] FATAL -- : [7bbb4277-523a-4702-9c46-489cb97d6f20]   
+F, [2020-02-20T21:29:56.533282 #7941] FATAL -- : [7bbb4277-523a-4702-9c46-489cb97d6f20] app/views/events/index.html.erb:17:in `_app_views_events_index_html_erb___2413654403073616457_47311037600020'
+I, [2020-02-20T21:29:59.130294 #7941]  INFO -- : [5ec2a0c1-5bd7-40eb-8983-251561029bc2] Started GET "/" for 127.0.0.1 at 2020-02-20 21:29:59 +0100
+I, [2020-02-20T21:29:59.131519 #7941]  INFO -- : [5ec2a0c1-5bd7-40eb-8983-251561029bc2] Processing by EventsController#index as HTML
+I, [2020-02-20T21:29:59.133440 #7941]  INFO -- : [5ec2a0c1-5bd7-40eb-8983-251561029bc2]   Rendering events/index.html.erb within layouts/application
+I, [2020-02-20T21:29:59.138729 #7941]  INFO -- : [5ec2a0c1-5bd7-40eb-8983-251561029bc2]   Rendered events/index.html.erb within layouts/application (5.1ms)
+I, [2020-02-20T21:29:59.138969 #7941]  INFO -- : [5ec2a0c1-5bd7-40eb-8983-251561029bc2] Completed 500 Internal Server Error in 7ms
+F, [2020-02-20T21:29:59.140002 #7941] FATAL -- : [5ec2a0c1-5bd7-40eb-8983-251561029bc2]   
+F, [2020-02-20T21:29:59.140069 #7941] FATAL -- : [5ec2a0c1-5bd7-40eb-8983-251561029bc2] ActionView::Template::Error (FATAL:  authentification peer échouée pour l'utilisateur « eventbrite_clone »
+):
+F, [2020-02-20T21:29:59.140229 #7941] FATAL -- : [5ec2a0c1-5bd7-40eb-8983-251561029bc2]     14: <main class="container">
+[5ec2a0c1-5bd7-40eb-8983-251561029bc2]     15: <h1 class="d-flex justify-content-center">Liste des évènements à venir</h1>
+[5ec2a0c1-5bd7-40eb-8983-251561029bc2]     16: 
+[5ec2a0c1-5bd7-40eb-8983-251561029bc2]     17: <% @events.each do |event| %>
+[5ec2a0c1-5bd7-40eb-8983-251561029bc2]     18: 
+[5ec2a0c1-5bd7-40eb-8983-251561029bc2]     19: <div class="card my-3">
+[5ec2a0c1-5bd7-40eb-8983-251561029bc2]     20:   <div class="card-header">
+F, [2020-02-20T21:29:59.140264 #7941] FATAL -- : [5ec2a0c1-5bd7-40eb-8983-251561029bc2]   
+F, [2020-02-20T21:29:59.140291 #7941] FATAL -- : [5ec2a0c1-5bd7-40eb-8983-251561029bc2] app/views/events/index.html.erb:17:in `_app_views_events_index_html_erb___2413654403073616457_47311037600020'
+I, [2020-02-20T21:29:59.724941 #7941]  INFO -- : [f0806415-a365-4c96-9905-3022a745c03f] Started GET "/" for 127.0.0.1 at 2020-02-20 21:29:59 +0100
+I, [2020-02-20T21:29:59.725630 #7941]  INFO -- : [f0806415-a365-4c96-9905-3022a745c03f] Processing by EventsController#index as HTML
+I, [2020-02-20T21:29:59.726939 #7941]  INFO -- : [f0806415-a365-4c96-9905-3022a745c03f]   Rendering events/index.html.erb within layouts/application
+I, [2020-02-20T21:29:59.731207 #7941]  INFO -- : [f0806415-a365-4c96-9905-3022a745c03f]   Rendered events/index.html.erb within layouts/application (4.0ms)
+I, [2020-02-20T21:29:59.731477 #7941]  INFO -- : [f0806415-a365-4c96-9905-3022a745c03f] Completed 500 Internal Server Error in 6ms
+F, [2020-02-20T21:29:59.732843 #7941] FATAL -- : [f0806415-a365-4c96-9905-3022a745c03f]   
+F, [2020-02-20T21:29:59.732960 #7941] FATAL -- : [f0806415-a365-4c96-9905-3022a745c03f] ActionView::Template::Error (FATAL:  authentification peer échouée pour l'utilisateur « eventbrite_clone »
+):
+F, [2020-02-20T21:29:59.733169 #7941] FATAL -- : [f0806415-a365-4c96-9905-3022a745c03f]     14: <main class="container">
+[f0806415-a365-4c96-9905-3022a745c03f]     15: <h1 class="d-flex justify-content-center">Liste des évènements à venir</h1>
+[f0806415-a365-4c96-9905-3022a745c03f]     16: 
+[f0806415-a365-4c96-9905-3022a745c03f]     17: <% @events.each do |event| %>
+[f0806415-a365-4c96-9905-3022a745c03f]     18: 
+[f0806415-a365-4c96-9905-3022a745c03f]     19: <div class="card my-3">
+[f0806415-a365-4c96-9905-3022a745c03f]     20:   <div class="card-header">
+F, [2020-02-20T21:29:59.733235 #7941] FATAL -- : [f0806415-a365-4c96-9905-3022a745c03f]   
+F, [2020-02-20T21:29:59.733281 #7941] FATAL -- : [f0806415-a365-4c96-9905-3022a745c03f] app/views/events/index.html.erb:17:in `_app_views_events_index_html_erb___2413654403073616457_47311037600020'
+I, [2020-02-21T14:26:14.876386 #30426]  INFO -- : [67aedddd-7b14-48e1-9ec5-dae6befe75ed] Started GET "/" for 127.0.0.1 at 2020-02-21 14:26:14 +0100
+I, [2020-02-21T14:26:14.877689 #30426]  INFO -- : [67aedddd-7b14-48e1-9ec5-dae6befe75ed] Processing by EventsController#index as HTML
+I, [2020-02-21T14:26:14.885716 #30426]  INFO -- : [67aedddd-7b14-48e1-9ec5-dae6befe75ed]   Rendering events/index.html.erb within layouts/application
+I, [2020-02-21T14:26:14.902196 #30426]  INFO -- : [67aedddd-7b14-48e1-9ec5-dae6befe75ed]   Rendered events/index.html.erb within layouts/application (16.2ms)
+I, [2020-02-21T14:26:14.902505 #30426]  INFO -- : [67aedddd-7b14-48e1-9ec5-dae6befe75ed] Completed 500 Internal Server Error in 25ms
+F, [2020-02-21T14:26:14.903711 #30426] FATAL -- : [67aedddd-7b14-48e1-9ec5-dae6befe75ed]   
+F, [2020-02-21T14:26:14.903812 #30426] FATAL -- : [67aedddd-7b14-48e1-9ec5-dae6befe75ed] ActionView::Template::Error (FATAL:  authentification peer échouée pour l'utilisateur « eventbrite_clone »
+):
+F, [2020-02-21T14:26:14.904050 #30426] FATAL -- : [67aedddd-7b14-48e1-9ec5-dae6befe75ed]     22: <main class="container">
+[67aedddd-7b14-48e1-9ec5-dae6befe75ed]     23: <h1 class="d-flex justify-content-center">Liste des évènements à venir</h1>
+[67aedddd-7b14-48e1-9ec5-dae6befe75ed]     24: 
+[67aedddd-7b14-48e1-9ec5-dae6befe75ed]     25: <% @events.each do |event| %>
+[67aedddd-7b14-48e1-9ec5-dae6befe75ed]     26: 
+[67aedddd-7b14-48e1-9ec5-dae6befe75ed]     27: <div class="card my-3">
+[67aedddd-7b14-48e1-9ec5-dae6befe75ed]     28:   <div class="card-header">
+F, [2020-02-21T14:26:14.904098 #30426] FATAL -- : [67aedddd-7b14-48e1-9ec5-dae6befe75ed]   
+F, [2020-02-21T14:26:14.904143 #30426] FATAL -- : [67aedddd-7b14-48e1-9ec5-dae6befe75ed] app/views/events/index.html.erb:25:in `_app_views_events_index_html_erb__2808614404009669361_69849623681000'
+I, [2020-02-21T14:26:24.230877 #30426]  INFO -- : [68c99840-c95c-40a6-8ec5-4e11ef870997] Started GET "/" for 127.0.0.1 at 2020-02-21 14:26:24 +0100
+I, [2020-02-21T14:26:24.232022 #30426]  INFO -- : [68c99840-c95c-40a6-8ec5-4e11ef870997] Processing by EventsController#index as HTML
+I, [2020-02-21T14:26:24.234759 #30426]  INFO -- : [68c99840-c95c-40a6-8ec5-4e11ef870997]   Rendering events/index.html.erb within layouts/application
+I, [2020-02-21T14:26:24.240610 #30426]  INFO -- : [68c99840-c95c-40a6-8ec5-4e11ef870997]   Rendered events/index.html.erb within layouts/application (5.6ms)
+I, [2020-02-21T14:26:24.240985 #30426]  INFO -- : [68c99840-c95c-40a6-8ec5-4e11ef870997] Completed 500 Internal Server Error in 9ms
+F, [2020-02-21T14:26:24.243147 #30426] FATAL -- : [68c99840-c95c-40a6-8ec5-4e11ef870997]   
+F, [2020-02-21T14:26:24.243301 #30426] FATAL -- : [68c99840-c95c-40a6-8ec5-4e11ef870997] ActionView::Template::Error (FATAL:  authentification peer échouée pour l'utilisateur « eventbrite_clone »
+):
+F, [2020-02-21T14:26:24.243600 #30426] FATAL -- : [68c99840-c95c-40a6-8ec5-4e11ef870997]     22: <main class="container">
+[68c99840-c95c-40a6-8ec5-4e11ef870997]     23: <h1 class="d-flex justify-content-center">Liste des évènements à venir</h1>
+[68c99840-c95c-40a6-8ec5-4e11ef870997]     24: 
+[68c99840-c95c-40a6-8ec5-4e11ef870997]     25: <% @events.each do |event| %>
+[68c99840-c95c-40a6-8ec5-4e11ef870997]     26: 
+[68c99840-c95c-40a6-8ec5-4e11ef870997]     27: <div class="card my-3">
+[68c99840-c95c-40a6-8ec5-4e11ef870997]     28:   <div class="card-header">
+F, [2020-02-21T14:26:24.243662 #30426] FATAL -- : [68c99840-c95c-40a6-8ec5-4e11ef870997]   
+F, [2020-02-21T14:26:24.243714 #30426] FATAL -- : [68c99840-c95c-40a6-8ec5-4e11ef870997] app/views/events/index.html.erb:25:in `_app_views_events_index_html_erb__2808614404009669361_69849623681000'
+I, [2020-02-21T14:26:56.845335 #30426]  INFO -- : [37245ef3-125f-47ce-9261-fd50c144e0b9] Started GET "/" for 127.0.0.1 at 2020-02-21 14:26:56 +0100
+I, [2020-02-21T14:26:56.846236 #30426]  INFO -- : [37245ef3-125f-47ce-9261-fd50c144e0b9] Processing by EventsController#index as HTML
+I, [2020-02-21T14:26:56.847783 #30426]  INFO -- : [37245ef3-125f-47ce-9261-fd50c144e0b9]   Rendering events/index.html.erb within layouts/application
+I, [2020-02-21T14:26:56.851933 #30426]  INFO -- : [37245ef3-125f-47ce-9261-fd50c144e0b9]   Rendered events/index.html.erb within layouts/application (4.0ms)
+I, [2020-02-21T14:26:56.852190 #30426]  INFO -- : [37245ef3-125f-47ce-9261-fd50c144e0b9] Completed 500 Internal Server Error in 6ms
+F, [2020-02-21T14:26:56.853162 #30426] FATAL -- : [37245ef3-125f-47ce-9261-fd50c144e0b9]   
+F, [2020-02-21T14:26:56.853242 #30426] FATAL -- : [37245ef3-125f-47ce-9261-fd50c144e0b9] ActionView::Template::Error (FATAL:  authentification peer échouée pour l'utilisateur « eventbrite_clone »
+):
+F, [2020-02-21T14:26:56.853387 #30426] FATAL -- : [37245ef3-125f-47ce-9261-fd50c144e0b9]     22: <main class="container">
+[37245ef3-125f-47ce-9261-fd50c144e0b9]     23: <h1 class="d-flex justify-content-center">Liste des évènements à venir</h1>
+[37245ef3-125f-47ce-9261-fd50c144e0b9]     24: 
+[37245ef3-125f-47ce-9261-fd50c144e0b9]     25: <% @events.each do |event| %>
+[37245ef3-125f-47ce-9261-fd50c144e0b9]     26: 
+[37245ef3-125f-47ce-9261-fd50c144e0b9]     27: <div class="card my-3">
+[37245ef3-125f-47ce-9261-fd50c144e0b9]     28:   <div class="card-header">
+F, [2020-02-21T14:26:56.853422 #30426] FATAL -- : [37245ef3-125f-47ce-9261-fd50c144e0b9]   
+F, [2020-02-21T14:26:56.853449 #30426] FATAL -- : [37245ef3-125f-47ce-9261-fd50c144e0b9] app/views/events/index.html.erb:25:in `_app_views_events_index_html_erb__2808614404009669361_69849623681000'
+I, [2020-02-21T14:27:08.214054 #30426]  INFO -- : [3ebc13b5-2bc0-4e8e-86b4-61aec0b2119b] Started GET "/" for 127.0.0.1 at 2020-02-21 14:27:08 +0100
+I, [2020-02-21T14:27:08.214886 #30426]  INFO -- : [3ebc13b5-2bc0-4e8e-86b4-61aec0b2119b] Processing by EventsController#index as HTML
+I, [2020-02-21T14:27:08.216455 #30426]  INFO -- : [3ebc13b5-2bc0-4e8e-86b4-61aec0b2119b]   Rendering events/index.html.erb within layouts/application
+I, [2020-02-21T14:27:08.224728 #30426]  INFO -- : [3ebc13b5-2bc0-4e8e-86b4-61aec0b2119b]   Rendered events/index.html.erb within layouts/application (8.1ms)
+I, [2020-02-21T14:27:08.224983 #30426]  INFO -- : [3ebc13b5-2bc0-4e8e-86b4-61aec0b2119b] Completed 500 Internal Server Error in 10ms
+F, [2020-02-21T14:27:08.226523 #30426] FATAL -- : [3ebc13b5-2bc0-4e8e-86b4-61aec0b2119b]   
+F, [2020-02-21T14:27:08.226649 #30426] FATAL -- : [3ebc13b5-2bc0-4e8e-86b4-61aec0b2119b] ActionView::Template::Error (FATAL:  authentification peer échouée pour l'utilisateur « eventbrite_clone »
+):
+F, [2020-02-21T14:27:08.226863 #30426] FATAL -- : [3ebc13b5-2bc0-4e8e-86b4-61aec0b2119b]     22: <main class="container">
+[3ebc13b5-2bc0-4e8e-86b4-61aec0b2119b]     23: <h1 class="d-flex justify-content-center">Liste des évènements à venir</h1>
+[3ebc13b5-2bc0-4e8e-86b4-61aec0b2119b]     24: 
+[3ebc13b5-2bc0-4e8e-86b4-61aec0b2119b]     25: <% @events.each do |event| %>
+[3ebc13b5-2bc0-4e8e-86b4-61aec0b2119b]     26: 
+[3ebc13b5-2bc0-4e8e-86b4-61aec0b2119b]     27: <div class="card my-3">
+[3ebc13b5-2bc0-4e8e-86b4-61aec0b2119b]     28:   <div class="card-header">
+F, [2020-02-21T14:27:08.226913 #30426] FATAL -- : [3ebc13b5-2bc0-4e8e-86b4-61aec0b2119b]   
+F, [2020-02-21T14:27:08.226959 #30426] FATAL -- : [3ebc13b5-2bc0-4e8e-86b4-61aec0b2119b] app/views/events/index.html.erb:25:in `_app_views_events_index_html_erb__2808614404009669361_69849623681000'
+I, [2020-02-21T14:29:03.326317 #30426]  INFO -- : [3879d65c-f4a5-47d9-ad43-7e7df569b4fb] Started GET "/" for 127.0.0.1 at 2020-02-21 14:29:03 +0100
+I, [2020-02-21T14:29:03.327254 #30426]  INFO -- : [3879d65c-f4a5-47d9-ad43-7e7df569b4fb] Processing by EventsController#index as HTML
+I, [2020-02-21T14:29:03.328831 #30426]  INFO -- : [3879d65c-f4a5-47d9-ad43-7e7df569b4fb]   Rendering events/index.html.erb within layouts/application
+I, [2020-02-21T14:29:03.334553 #30426]  INFO -- : [3879d65c-f4a5-47d9-ad43-7e7df569b4fb]   Rendered events/index.html.erb within layouts/application (5.6ms)
+I, [2020-02-21T14:29:03.334783 #30426]  INFO -- : [3879d65c-f4a5-47d9-ad43-7e7df569b4fb] Completed 500 Internal Server Error in 7ms
+F, [2020-02-21T14:29:03.335976 #30426] FATAL -- : [3879d65c-f4a5-47d9-ad43-7e7df569b4fb]   
+F, [2020-02-21T14:29:03.336071 #30426] FATAL -- : [3879d65c-f4a5-47d9-ad43-7e7df569b4fb] ActionView::Template::Error (FATAL:  authentification peer échouée pour l'utilisateur « eventbrite_clone »
+):
+F, [2020-02-21T14:29:03.336271 #30426] FATAL -- : [3879d65c-f4a5-47d9-ad43-7e7df569b4fb]     22: <main class="container">
+[3879d65c-f4a5-47d9-ad43-7e7df569b4fb]     23: <h1 class="d-flex justify-content-center">Liste des évènements à venir</h1>
+[3879d65c-f4a5-47d9-ad43-7e7df569b4fb]     24: 
+[3879d65c-f4a5-47d9-ad43-7e7df569b4fb]     25: <% @events.each do |event| %>
+[3879d65c-f4a5-47d9-ad43-7e7df569b4fb]     26: 
+[3879d65c-f4a5-47d9-ad43-7e7df569b4fb]     27: <div class="card my-3">
+[3879d65c-f4a5-47d9-ad43-7e7df569b4fb]     28:   <div class="card-header">
+F, [2020-02-21T14:29:03.336319 #30426] FATAL -- : [3879d65c-f4a5-47d9-ad43-7e7df569b4fb]   
+F, [2020-02-21T14:29:03.336363 #30426] FATAL -- : [3879d65c-f4a5-47d9-ad43-7e7df569b4fb] app/views/events/index.html.erb:25:in `_app_views_events_index_html_erb__2808614404009669361_69849623681000'
+I, [2020-02-21T14:37:35.931899 #30870]  INFO -- : [bac1e0bb-1e86-4f41-acfa-5b6885b4ec08] Started GET "/" for 127.0.0.1 at 2020-02-21 14:37:35 +0100
+I, [2020-02-21T14:37:35.933806 #30870]  INFO -- : [bac1e0bb-1e86-4f41-acfa-5b6885b4ec08] Processing by EventsController#index as HTML
+I, [2020-02-21T14:37:35.943644 #30870]  INFO -- : [bac1e0bb-1e86-4f41-acfa-5b6885b4ec08]   Rendering events/index.html.erb within layouts/application
+I, [2020-02-21T14:37:35.958333 #30870]  INFO -- : [bac1e0bb-1e86-4f41-acfa-5b6885b4ec08]   Rendered events/index.html.erb within layouts/application (14.5ms)
+I, [2020-02-21T14:37:35.958705 #30870]  INFO -- : [bac1e0bb-1e86-4f41-acfa-5b6885b4ec08] Completed 500 Internal Server Error in 25ms
+F, [2020-02-21T14:37:35.960521 #30870] FATAL -- : [bac1e0bb-1e86-4f41-acfa-5b6885b4ec08]   
+F, [2020-02-21T14:37:35.960626 #30870] FATAL -- : [bac1e0bb-1e86-4f41-acfa-5b6885b4ec08] ActionView::Template::Error (FATAL:  authentification peer échouée pour l'utilisateur « eventbrite_clone »
+):
+F, [2020-02-21T14:37:35.960944 #30870] FATAL -- : [bac1e0bb-1e86-4f41-acfa-5b6885b4ec08]     22: <main class="container">
+[bac1e0bb-1e86-4f41-acfa-5b6885b4ec08]     23: <h1 class="d-flex justify-content-center">Liste des évènements à venir</h1>
+[bac1e0bb-1e86-4f41-acfa-5b6885b4ec08]     24: 
+[bac1e0bb-1e86-4f41-acfa-5b6885b4ec08]     25: <% @events.each do |event| %>
+[bac1e0bb-1e86-4f41-acfa-5b6885b4ec08]     26: 
+[bac1e0bb-1e86-4f41-acfa-5b6885b4ec08]     27: <div class="card my-3">
+[bac1e0bb-1e86-4f41-acfa-5b6885b4ec08]     28:   <div class="card-header">
+F, [2020-02-21T14:37:35.961016 #30870] FATAL -- : [bac1e0bb-1e86-4f41-acfa-5b6885b4ec08]   
+F, [2020-02-21T14:37:35.961087 #30870] FATAL -- : [bac1e0bb-1e86-4f41-acfa-5b6885b4ec08] app/views/events/index.html.erb:25:in `_app_views_events_index_html_erb__2395651823904426003_70048802760900'
+I, [2020-02-21T14:37:40.415523 #30870]  INFO -- : [2d9ff74a-6b4f-4e8b-a9ae-6b8617138e62] Started GET "/" for 127.0.0.1 at 2020-02-21 14:37:40 +0100
+I, [2020-02-21T14:37:40.416780 #30870]  INFO -- : [2d9ff74a-6b4f-4e8b-a9ae-6b8617138e62] Processing by EventsController#index as HTML
+I, [2020-02-21T14:37:40.418710 #30870]  INFO -- : [2d9ff74a-6b4f-4e8b-a9ae-6b8617138e62]   Rendering events/index.html.erb within layouts/application
+I, [2020-02-21T14:37:40.423612 #30870]  INFO -- : [2d9ff74a-6b4f-4e8b-a9ae-6b8617138e62]   Rendered events/index.html.erb within layouts/application (4.7ms)
+I, [2020-02-21T14:37:40.423788 #30870]  INFO -- : [2d9ff74a-6b4f-4e8b-a9ae-6b8617138e62] Completed 500 Internal Server Error in 7ms
+F, [2020-02-21T14:37:40.424915 #30870] FATAL -- : [2d9ff74a-6b4f-4e8b-a9ae-6b8617138e62]   
+F, [2020-02-21T14:37:40.424989 #30870] FATAL -- : [2d9ff74a-6b4f-4e8b-a9ae-6b8617138e62] ActionView::Template::Error (FATAL:  authentification peer échouée pour l'utilisateur « eventbrite_clone »
+):
+F, [2020-02-21T14:37:40.425183 #30870] FATAL -- : [2d9ff74a-6b4f-4e8b-a9ae-6b8617138e62]     22: <main class="container">
+[2d9ff74a-6b4f-4e8b-a9ae-6b8617138e62]     23: <h1 class="d-flex justify-content-center">Liste des évènements à venir</h1>
+[2d9ff74a-6b4f-4e8b-a9ae-6b8617138e62]     24: 
+[2d9ff74a-6b4f-4e8b-a9ae-6b8617138e62]     25: <% @events.each do |event| %>
+[2d9ff74a-6b4f-4e8b-a9ae-6b8617138e62]     26: 
+[2d9ff74a-6b4f-4e8b-a9ae-6b8617138e62]     27: <div class="card my-3">
+[2d9ff74a-6b4f-4e8b-a9ae-6b8617138e62]     28:   <div class="card-header">
+F, [2020-02-21T14:37:40.425227 #30870] FATAL -- : [2d9ff74a-6b4f-4e8b-a9ae-6b8617138e62]   
+F, [2020-02-21T14:37:40.425269 #30870] FATAL -- : [2d9ff74a-6b4f-4e8b-a9ae-6b8617138e62] app/views/events/index.html.erb:25:in `_app_views_events_index_html_erb__2395651823904426003_70048802760900'
+I, [2020-02-21T14:37:40.825220 #30870]  INFO -- : [c7f1e101-8cdd-4a23-85d1-95ee8a589e57] Started GET "/" for 127.0.0.1 at 2020-02-21 14:37:40 +0100
+I, [2020-02-21T14:37:40.826071 #30870]  INFO -- : [c7f1e101-8cdd-4a23-85d1-95ee8a589e57] Processing by EventsController#index as HTML
+I, [2020-02-21T14:37:40.827717 #30870]  INFO -- : [c7f1e101-8cdd-4a23-85d1-95ee8a589e57]   Rendering events/index.html.erb within layouts/application
+I, [2020-02-21T14:37:40.831692 #30870]  INFO -- : [c7f1e101-8cdd-4a23-85d1-95ee8a589e57]   Rendered events/index.html.erb within layouts/application (3.8ms)
+I, [2020-02-21T14:37:40.831927 #30870]  INFO -- : [c7f1e101-8cdd-4a23-85d1-95ee8a589e57] Completed 500 Internal Server Error in 6ms
+F, [2020-02-21T14:37:40.832912 #30870] FATAL -- : [c7f1e101-8cdd-4a23-85d1-95ee8a589e57]   
+F, [2020-02-21T14:37:40.832970 #30870] FATAL -- : [c7f1e101-8cdd-4a23-85d1-95ee8a589e57] ActionView::Template::Error (FATAL:  authentification peer échouée pour l'utilisateur « eventbrite_clone »
+):
+F, [2020-02-21T14:37:40.833111 #30870] FATAL -- : [c7f1e101-8cdd-4a23-85d1-95ee8a589e57]     22: <main class="container">
+[c7f1e101-8cdd-4a23-85d1-95ee8a589e57]     23: <h1 class="d-flex justify-content-center">Liste des évènements à venir</h1>
+[c7f1e101-8cdd-4a23-85d1-95ee8a589e57]     24: 
+[c7f1e101-8cdd-4a23-85d1-95ee8a589e57]     25: <% @events.each do |event| %>
+[c7f1e101-8cdd-4a23-85d1-95ee8a589e57]     26: 
+[c7f1e101-8cdd-4a23-85d1-95ee8a589e57]     27: <div class="card my-3">
+[c7f1e101-8cdd-4a23-85d1-95ee8a589e57]     28:   <div class="card-header">
+F, [2020-02-21T14:37:40.833145 #30870] FATAL -- : [c7f1e101-8cdd-4a23-85d1-95ee8a589e57]   
+F, [2020-02-21T14:37:40.833173 #30870] FATAL -- : [c7f1e101-8cdd-4a23-85d1-95ee8a589e57] app/views/events/index.html.erb:25:in `_app_views_events_index_html_erb__2395651823904426003_70048802760900'

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Kit UI - EventFlatty</title>
+
+  <link rel="stylesheet" href="../bootstrap.css">
+  <script src="https://kit.fontawesome.com/e5ab504795.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="../index.html">LM-Eventbrite | <small>Kit UI</small></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="../index.html">Accueil</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="navbar.html">NavBar</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="footer.html">Footer</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="form.html">Forms</a>
+        </li>
+        <li class="btn-group">
+          <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Banners
+          </button>
+          <div class="dropdown-menu dropdown-menu-left" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="banner_home.html">Banner Home</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="banner_other.html">Banner Other</a>
+          </div>
+        </li>
+        <li class="btn-group">
+          <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Cards & Grid
+          </button>
+          <div class="dropdown-menu dropdown-menu-left" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="cards.html">Cards</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="cards_grid.html">Cards Grid</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="comments.html">Comments</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="show_event.html">Show</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="left-right.html">Left/Right</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="filters.html">Filtres</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <br><br>
+
+
+  <main class="container">
+
+  <h1 class="text-center mt-2">Nom de l'évènement</h1>
+
+  <div class="jumbotron" 
+    style="background-image: url(https://images.pexels.com/photos/1179581/pexels-photo-1179581.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 300px;">
+  </div>
+  
+  
+  <div class="card my-5">
+    <div class="card-header">
+        <strong>Organisateur : </strong><a href="#">Nom de l'Organisateur</a>
+    <!--  <%= link_to 'Voir profil', user_path(@admin.id) %>  sortir également la première ligne de la methode show dans le controleur-->
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item"><strong>Début : </strong>dd/mm/yyyy à 00h00</li>
+      <li class="list-group-item"><strong>Fin : </strong>dd/mm/yyyy à 00h00</li>
+      <li class="list-group-item"><strong>Prix : </strong>xxx €</li>
+      <li class="list-group-item"><strong>Où : </strong>The place to be</li>
+      <li class="list-group-item"><strong>Description : </strong>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum, deleniti ipsa minima quo aut porro odio debitis quasi ea, magni molestias cupiditate quos est eaque tempora numquam mollitia nam nesciunt.</li>
+    </ul>
+  </div>
+
+  <div class="text-center" >
+    <a href="#" class="btn btn-outline-primary btn-lg"> Rejoindre l'évènement</a>
+  </div>
+
+  </main>
+
+
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script> 
+
+</body>
+</html>

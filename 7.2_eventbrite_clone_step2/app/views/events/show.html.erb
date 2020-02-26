@@ -1,0 +1,27 @@
+<main class="container">
+<p id="notice"><%= notice %></p>
+
+<h1 class="text-center"><%= @event.title %></h1>
+
+
+<div class="card my-5">
+  <div class="card-header">
+      <strong>Email de l'organisateur : </strong><%= @admin.email %>
+  <!--  <%= link_to 'Voir profil', user_path(@admin.id) %>  sortir également la première ligne de la methode show dans le controleur-->
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"><strong>Début : </strong><%= @event.start_date.strftime('%d/%m/%Y à %H:%M') %></li>
+    <li class="list-group-item"><strong>Fin : </strong><%= @event.end_date.strftime('%d/%m/%Y à %H:%M') %></li>
+    <li class="list-group-item"><strong>Prix : </strong><%= @event.price %> €</li>
+    <li class="list-group-item"><strong>Où : </strong><%= @event.location %></li>
+    <li class="list-group-item"><strong>Description : </strong><%= @event.description %></li>
+  </ul>
+</div>
+
+<% if user_signed_in? && current_user.id == @admin.id %>
+<%= link_to 'Editer', edit_event_path(@event), class:"btn btn-success" %> 
+<%= link_to 'Supprimer', @event, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger" %>
+<% end %>
+
+<%= link_to '« Retour Accueil', events_path, class:"btn btn-primary" %>
+</main>

@@ -1,0 +1,10 @@
+<main class="container">
+<h1 class="text-center">Editer votre évènement</h1>
+
+<%= render 'form', event: @event %>
+
+<div class="text-center">
+<%= link_to "Voir l'évènement", @event, class:"btn btn-info" %> |
+<%= link_to '« Retour Accueil', events_path, class:"btn btn-primary" %>
+</div>
+</main>

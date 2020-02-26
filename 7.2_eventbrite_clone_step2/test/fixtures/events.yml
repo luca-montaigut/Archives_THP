@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  start_date: 2020-02-17 10:58:39
+  duration: 1
+  title: MyString
+  description: MyText
+  price: 1
+  location: MyString
+
+two:
+  start_date: 2020-02-17 10:58:39
+  duration: 1
+  title: MyString
+  description: MyText
+  price: 1
+  location: MyString

@@ -1,0 +1,50 @@
+<div class="jumbotron" 
+  style="background-image: url(https://images.pexels.com/photos/1157557/pexels-photo-1157557.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;">
+  <div class="container" style="background-color: rgba(255, 255, 255, 0.6); padding: 25px; border-radius: 20px;">
+    <h1 class="display-3">LM-Eventbrite</h1>
+    <p>Retrouvez tous les évènements près de chez vous et partagez les vôtres</p>
+    <p><%= link_to 'Créer un évènement »', new_event_path, class:"btn btn-success btn-lg" %></p>
+  </div>
+</div>
+
+<%if notice%>
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+  <%= notice %>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<%end%>
+  
+<main class="container">
+<h1 class="d-flex justify-content-center">Liste des évènements à venir</h1>
+
+<% @events.each do |event| %>
+
+<div class="card my-3">
+  <div class="card-header d-flex justify-content-between">
+    <h4><%= event.title %></h4>
+    <div>
+    Prix : <%= event.price %> € // Durée : <%= event.duration %> min
+  </div>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title"><%= event.start_date.strftime("%A, %d/%m/%Y") %> à <%= event.location %></h5>
+    <p class="card-text"><%= event.description %></p>
+  </div>
+  <div class="d-flex flex-column justify-content-center mb-1">
+    <%= link_to 'Voir +', event_path(event.id), class:"btn btn-primary" %> 
+    <% if user_signed_in? && current_user.id == event.admin.id %>
+    <%= link_to 'Editer', edit_event_path(event), class:"btn btn-success" %> 
+    <%= link_to 'Supprimer', event, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger" %>
+    <% end %>
+  </div>
+</div>
+
+<% end %>
+
+</main>
+
