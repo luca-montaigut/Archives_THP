@@ -1,0 +1,6 @@
+<%= form_with method: "PUT", url: cart_path  do |form| %>
+  <%= form.select :quantity, [1, 2, 3, 4, 5]%>
+  <%= form.submit "Ajouter au panier".html_safe, class:"btn btn-success"%>
+  <%= link_to "<i class='fa fa-trash'></i>".html_safe, cart_path(params[:id]), method: "DELETE",class: "btn btn-danger", remote: true %>
+<% end %>
+

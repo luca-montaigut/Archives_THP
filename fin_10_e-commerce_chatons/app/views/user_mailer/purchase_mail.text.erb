@@ -1,0 +1,12 @@
+Bonjour <%= @cart.user.first_name %> et merci pour vos achats !
+
+Voici un recapitulatif de vos achats.
+
+<% @cart.items.each do |item| %>
+- <%= item.title %>
+
+<% end %>
+
+Vous avez payé un total de <%= @cart.total %>€
+
+A très vite sur Whiskers !

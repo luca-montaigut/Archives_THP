@@ -1,0 +1,10 @@
+<%= @cart.user.first_name %> <%= @cart.user.last_name %> vient de passer une commande.
+
+Voici un recapitulatif de la commande.
+
+<% @cart.items.each do |item| %>
+- <%= item.title %>
+
+<% end %>
+
+Total de la commande: <%= @cart.total %>€

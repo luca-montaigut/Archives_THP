@@ -1,0 +1,20 @@
+<% if @comment.errors.any? %>
+    <% @comment.errors.full_messages.each do |message| %>
+      <p class="alert alert-danger d-flex justify-content-center" role="alert"><%= message %></p>
+    <% end %>
+<% end %>
+
+<div class="container mt-5 form-group">
+ <%= form_tag url_for(action: 'update'), method: "patch" do %>
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+      <strong><%= label_tag 'Contenu du commentaire' %></strong>
+      <%= text_area_tag 'content', @comment.content, class:"form-control" %>
+      <br />
+
+      <div class="d-flex justify-content-center"><%= submit_tag "Editer le commentaire", class:"btn btn-success btn-lg"%></div>
+
+    <% end %>
+        <hr>
+    <div style="margin-top: 10px;" class="d-flex justify-content-center"><%= link_to "Retour Accueil", root_path, :class => "btn btn-info btn-sm" %></div>
+</div>

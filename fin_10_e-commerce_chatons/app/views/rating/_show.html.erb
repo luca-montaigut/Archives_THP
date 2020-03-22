@@ -1,0 +1,53 @@
+  <div class="row">
+  <div class="rate">
+    <input type="radio" id="star5" name="rate" value="5" />
+    <label for="star5" title="text">5 stars</label>
+    <input type="radio" id="star4" name="rate" value="4" />
+    <label for="star4" title="text">4 stars</label>
+    <input type="radio" id="star3" name="rate" value="3" />
+    <label for="star3" title="text">3 stars</label>
+    <input type="radio" id="star2" name="rate" value="2" />
+    <label for="star2" title="text">2 stars</label>
+    <input type="radio" id="star1" name="rate" value="1" />
+    <label for="star1" title="text">1 star</label>
+  </div>
+</div>
+
+<% if user_signed_in?%>
+  <script>
+  $('#star1, #star2, #star3, #star4, #star5').on('click', function () {
+    $.ajax({
+      url: `<%=  item_path(@item)%>/rating/${$(this).val()}/`,
+      context: document.body,
+      dataType : 'script',
+      method: 'PUT'
+
+    }).done(function() {
+
+    });    
+  });
+
+  let rate = <%= @item.item_average_rating%> 
+  
+  for (let i = 1; i < rate + 1; i++) {
+     $(`#star${i}`).prop( "checked", true );
+  }
+
+
+
+
+  </script>
+  <% else %>
+  <script>
+    let rate = <%= @item.item_average_rating%> 
+  
+    for (let i = 1; i < rate + 1; i++) {
+      $(`#star${i}`).prop( "checked", true );
+    }
+      
+    $('#star1, #star2, #star3, #star4, #star5').on('click', function () {
+      window.location.href = "<%= new_user_session_url %>";
+    })
+    
+  </script>
+  <% end %>

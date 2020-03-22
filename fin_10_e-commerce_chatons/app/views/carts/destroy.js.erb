@@ -1,0 +1,11 @@
+$("#<%= params[:id]%>").remove()
+$('#navbarTogglerDemo02').html("")
+$('#navbarTogglerDemo02').html("<%= j render 'layouts/btn'%>")
+
+<% if current_user%>
+$("#stripe").html("")
+$("#stripe").html('<%= j render "stripe"%>')
+<% else %>
+$("#stripe").html("")
+$("#stripe").html('<%= j render "guest_total"%>')
+<%end%>

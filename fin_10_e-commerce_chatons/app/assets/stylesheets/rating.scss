@@ -1,0 +1,59 @@
+// Place all the styles related to the rating controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.rate {
+  float: left;
+  height: 46px;
+  padding: 0 10px;
+
+  &:not(:checked) {
+    > {
+      input {
+        position: absolute;
+        top: -9999px;
+      }
+
+      label {
+        float: right;
+        width: 1em;
+        overflow: hidden;
+        white-space: nowrap;
+        cursor: pointer;
+        font-size: 30px;
+        color: #ccc;
+
+        &:before {
+          content: '★ ';
+        }
+      }
+    }
+
+    > label:hover {
+      color: #deb217;
+
+      ~ label {
+        color: #deb217;
+      }
+    }
+  }
+
+  > input:checked ~ label {
+    color: #ffc700;
+  }
+
+  > {
+    input:checked {
+      + label:hover, ~ label:hover {
+        color: #c59b08;
+
+        ~ label {
+          color: #c59b08;
+        }
+      }
+    }
+
+    label:hover ~ input:checked ~ label {
+      color: #c59b08;
+    }
+  }
+}

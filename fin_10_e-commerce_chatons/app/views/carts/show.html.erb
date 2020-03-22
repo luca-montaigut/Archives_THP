@@ -1,0 +1,49 @@
+<h1>Votre panier</h1>
+<div class="card border-light mb-3 " >
+  <div class="card-header text-white bg-dark">
+    Votre panier:
+  </div>
+  <ul class="list-group list-group-flush border-right-0">
+    <% @cart.in_cart.each do |item| %>
+      <li class="list-group-item" id="<%= item.id%>">
+        <div class="row">
+            <div class="col-md-2">
+              <%= image_tag item.picture, width: "150" %>
+            </div>
+            <div class="col-md-9">
+                <%= link_to item.title, item_path(item), style:"font-size: 1.5em;" %><br>
+              <strong>
+                <%= item.price %>€
+              </strong>
+              <br>
+              <strong>
+                Quantité: <%= item.quantity(@cart.id)%> X 
+              </strong>
+            </div>
+            <div class="col-md-1">
+              <%= link_to "<i class='fa fa-trash'></i>".html_safe, cart_path(item), method: "DELETE",class: "btn btn-danger", remote: true %>
+            </div>
+        </div>
+      </li>
+    <% end %>
+      <div class="card-footer  text-right">
+      <% if @cart.total == 0 %>
+        <h4>Total: <%= @cart.total%> €</h4>
+        <%= link_to "Payer", root_path, class:"btn btn-outline-primary btn-lg" %> 
+      <% else %>
+        <% if user_signed_in? %>
+    <!-- STRIPE -->
+        <div id="stripe">
+          <%= render 'stripe'%>
+        </div>
+    <!-- End of STRIPE -->        
+        <% else %>
+        <div id="stripe">
+          <%= render 'guest_total'%>
+        </div>
+        <% end %>
+      <% end %>
+
+      </div>    
+  </ul>
+</div>

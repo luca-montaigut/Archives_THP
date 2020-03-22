@@ -1,0 +1,62 @@
+
+  
+  <h1 class="text-center mt-4"> Bienvenue sur votre profil <%=@user.first_name%> <%=@user.last_name%></h1>
+  
+  
+<div class="d-flex justify-content-center mt-5">
+        <div class="card w-50">
+          <div class="card-body">
+            <h5 class="card-title"><%= @user.first_name %> <%= @user.last_name %></h5>
+            <p class="card-text"><%= @user.description %></p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"><%= @user.email %></li>
+            <li class="list-group-item"><%= @user.birthdate %></li>
+            <li class="list-group-item"><%= @user.adress %></li>
+          </ul>
+          <div class="card-body text-center">
+            <%if current_user.id == @user.id %>
+              <%= link_to 'Editer le compte', edit_user_registration_path, class:"btn btn-outline-success" %> |
+              <%= link_to 'Editer le profil', edit_user_path, class:"btn btn-success" %>
+            <% end %>
+          </div>
+        </div>
+    </div>
+
+    <div class="text-center mt-3">
+        <%= link_to '« Retour Accueil', root_path, class:"btn btn-warning" %>
+    </div>
+  <br>
+  <div class="my-5">
+    <h2 > Historique de vos commandes </h2><br>
+    
+    <% current_user.orders.each_with_index do |order, i| %>
+      <div class="accordion" id="accordionExample">
+        <div class="card">
+          <div class="card-header" id="heading<%= i %>">
+            <h2 class="mb-0">
+              <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse<%= i %>" aria-expanded="true" aria-controls="collapse<%= i %>">
+                <b> Commande du <%= order.created_at.strftime('%d/%m/%Y à %H:%M') %> d'un montant de <%= order.total %>€</b> 
+              </button>
+            </h2>
+          </div>
+      
+          <div id="collapse<%= i %>" class="collapse" aria-labelledby="heading<%= i %>" data-parent="#accordionExample">
+            <div class="card-body">
+              <p> Contenu : </p>
+              <ul>
+              <% order.items.each do |item| %>
+                <li class="d-flex justify-content-between">
+                  <%= item.title %> 
+                  <%= link_to "Voir l'article", item_path(item.id) %>
+                </li> 
+              <% end %>
+              </ul>
+        
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

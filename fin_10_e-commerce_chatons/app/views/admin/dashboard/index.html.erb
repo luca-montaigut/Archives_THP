@@ -1,0 +1,19 @@
+<h1 class="text-center my-2">Bienvenue sur le Dashboard Admin</h1>
+
+<div>
+<p><b>Chiffre d'affaire : <%= @admin_orders.map{ |order| order.total }.sum %> € </b></p>
+<p><b>Nombre de ventes : <%= @admin_orders.count %> </b></p>
+<% if @admin_orders.count > 0 %>
+  <p><b>Panier Moyen : <%= @admin_orders.map{ |order| order.total }.sum / @admin_orders.count %> € </b></p>
+<% end %>
+<hr>
+<p><b>Nombre d'utilisateurs : <%= @admin_users.count %> </b></p>
+<p><b>Nombre de clients : <%= @admin_users.map{ |user| user.orders.ids.size != 0 ? user : nil }.compact.count %> </b></p>
+<% if @admin_users.map{ |user| user.orders.ids.size != 0 ? user : nil }.compact.count > 0 %>
+  <p><b>Taux de transformation : <%= (@admin_users.map{ |user| user.orders.ids.size != 0 ? user : nil }.compact.count.to_f / @admin_users.count.to_f) * 100 %> % </b></p>
+<% end %>
+<hr>
+<p><b>Nombre de produits en vente : <%= @admin_items.count %> </b></p>
+<p><b>Prix moyen d'un article : <%= @admin_items.map{ |item| item.price }.sum / @admin_items.count %> € </b></p>
+
+</div>

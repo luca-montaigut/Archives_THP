@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="row">
+    <div class="col-3"></div>
+    <div class="col-6 mt-5">
+      <h2>Modifier le compte</h2>
+        <div class="text-center">
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+          <%= render "devise/shared/error_messages", resource: resource %>
+  
+          <div class="field mt-4">
+            <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+          </div>
+  
+          <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+            <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+          <% end %>
+  
+          <div class="field mt-3">
+            <i>Laisser vide si vous ne voulez pas changer votre mot de passe</i><br />
+            <%= f.password_field :password, autocomplete: "new-password", placeholder:"Nouveau mot de passe" %>
+            <% if @minimum_password_length %> 
+              <br />
+              <em><%= @minimum_password_length %> caractères minimum</em>
+            <% end %>
+          </div>
+  
+          <div class="field mt-3">
+            <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder:"Confirmation" %>
+          </div>
+  
+          <div class="field mt-3">
+            <%= f.password_field :current_password, autocomplete: "current-password", placeholder:"Mot de passe actuel" %>
+          </div>
+  
+          <div class="actions my-3">
+            <%= f.submit "Mettre à jour" %>
+          </div>
+        <% end %>
+        </div>
+      <div class="mt-5">
+        <h3>Voulez-vous supprimer votre compte?</h3>
+          <div class="text-center">
+          <p>Malheureux ? :( <%= button_to "Supprimer mon compte", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+    
+          <%= link_to "Back", :back, class:"btn btn-outline-warning"%>
+    
+          </div>
+      </div>
+    </div>
+    <div class="col-3"></div>
+  </div>
+</div>

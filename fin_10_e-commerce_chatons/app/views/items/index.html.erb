@@ -1,0 +1,78 @@
+<!-- Index -->
+<div id="filter">
+  <p id="all" class="btn btn-warning">All</p>
+  <% @categories.each do |category| %>
+  <p id=<%= category.name.split.join.downcase %> class="btn btn-success"><%= category.name %></p>
+  <% end %>
+<div>
+
+<br>
+
+<div class="row">
+
+  <% @items.each do |item|%>
+    <div class="col-lg-4 col-md-6 mb-4">
+      <div class="card h-100 <%= item.category.name.split.join.downcase %>">
+        <%= image_tag item.picture, height: "200px;" %>
+        <div class="card-body">
+          
+          <h4 class="card-title d-flex justify-content-between">
+            <%= link_to item.title, item_path(item)%>
+            <div>
+            <% if @cart.is_in_cart?(item.id)%>
+            <% else %>   
+              <%= link_to '<i class="fas fa-cart-arrow-down"></i>'.html_safe, cart_url(item, 1), method: "PUT", remote: true, class: "btn btn-success", id:"go"%></a>
+            <% end %>
+            </div>
+          </h4>
+          <h5><%= item.price%>€        
+          <% if item.item_average_rating != nil%>
+          <small class="text-muted"><%= "★" * item.item_average_rating%></small>
+          <% end %>
+          </h5>
+          <p class="card-text"><%= item.description%></p>
+        </div>
+        <div class="card-footer">
+
+          <b><%= item.category.name %></b>
+        </div>
+      </div>
+    </div>
+  <%end%>
+
+</div>
+
+
+<script>
+
+    $('a[id="go"]').click(function() {
+      let text = $("#pill").text()
+      let num = parseInt(text)
+      $(this).hide()
+      $("#pill").html(`${num + 1}`)
+   });
+
+<% @categories.each do |category| %>
+  document.getElementById('<%= category.name.split.join.downcase %>').addEventListener('click', function(e){
+        e.preventDefault;
+        let index = document.querySelector('.row')
+    for (let i = 0; i < index.children.length; i++) {
+      if (!index.children[i].firstElementChild.classList.contains('<%= category.name.split.join.downcase %>')){
+        index.children[i].style.display = "none"
+      } else {
+        index.children[i].style.display = "flex"
+      }
+    }
+  });
+<% end %>
+
+document.getElementById('all').addEventListener('click', function(e){
+      e.preventDefault;
+      let index = document.querySelector('.row')
+  for (let i = 0; i < index.children.length; i++) {
+      index.children[i].style.display = "flex"
+  }
+});
+
+
+</script>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Whiskers</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
+    <script src="https://kit.fontawesome.com/f56b9447bd.js" crossorigin="anonymous"></script>
+
+
+  </head>
+
+  <body>
+<!-- Start of nav bar-->
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark d-flex justify-content-between fixed-top">
+      <%= link_to " Whisker", root_path, class:"navbar-brand" %>
+      <div class="navbar-nav" id="navbarTogglerDemo02">
+        <%= render  'layouts/btn'%>
+      </div>
+    </nav>    
+<!-- End of nav bar-->
+
+<!-- Flash -->
+  <div class="container">
+    <% flash.each do |key, value| %>
+      <% if key == "error" %>
+        <div class="alert alert-danger alert-dismissible fade show fixed-top mt-5" role="alert">
+          <%= content_tag :span, value, class: "flash #{key}" %>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <% else %>
+        <div class="alert alert-success alert-dismissible fade show fixed-top mt-5" role="alert">
+          <%= content_tag :span, value, class: "flash #{key}" %>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+<!-- End of Flash -->
+
+<!-- jumbotron -->
+    <% if current_page?(root_path) %>
+      <div class="jumbotron mt-5" style="background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(https://images.pexels.com/photos/1421082/pexels-photo-1421082.jpeg?cs=srgb&dl=a-fourrure-a-poils-animal-animal-de-compagnie-1421082.jpg&fm=jpg);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      ">
+        <div >
+          <h1 class="display-4 text-white"><strong>Whiskers</strong></h1>
+          <p class="lead text-warning"><strong>Photos d'amateurs et de professionnels</strong></p>
+        </div>
+      </div>      
+    <% end %>
+<!-- End of Jumbotron -->
+
+<!-- Start of main-->
+    <% if current_page?(root_path) %>
+    <main role="main" class="flex-shrink-0">
+    <% else %>
+    <main role="main" class="flex-shrink-0 mt-5">
+    <% end %>
+      <div class="container">
+            <%= yield %>
+      </div>
+    </main>
+<!-- End of main-->
+
+<!-- Start of footer-->
+<% if current_page?(root_path) %>
+<footer class="page-footer">
+    <div class="container-fluid bg-success py-1 text-center">
+<% else %>
+<footer class="page-footer fixed-bottom">
+    <div class="container-fluid bg-success py-1 text-center fixed-bottem">
+<% end %>
+      <p class="mt-2">
+        <i class="far fa-copyright"></i> Fait avec <i class="fas fa-heart"></i> par l'équipage Nantais 
+    </div>  
+    <div class="container-fluid bg-dark py-1">
+      <div class="container text-center text-white">
+      </div>
+    </div>
+  </footer>
+<!-- End of footer-->
+
+  </body>
+</html>

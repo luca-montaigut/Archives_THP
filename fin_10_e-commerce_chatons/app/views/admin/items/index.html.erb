@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Admin Items</h1>
+
+<%= link_to 'Nouvel Objet', new_admin_item_path, class:"btn btn-primary" %>
+<br>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Ref:</th>
+      <th scope="col" >Titre:</th>
+      <th scope="col" >Prix:</th>
+      <th scope="col" >Action:</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @admin_items.each do |admin_item| %>
+    <tr>
+      <th scope="row"><%= admin_item.id %></th>
+      <td ><%= admin_item.title %></td>
+      <td><%= admin_item.price %></td>
+      <td width="15%"><%= link_to 'Show', admin_item_path(admin_item) %> <%= link_to 'Edit', edit_admin_item_path(admin_item) %> <%= link_to 'Destroy', admin_item_path(admin_item), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+

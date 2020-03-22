@@ -1,0 +1,18 @@
+<% if !@cart.is_in_cart?(params[:id]) %>
+<div class="form-inline">
+<%= form_with method: "PUT", url: cart_path  do |form| %>
+  <%= form.number_field :quantity , min: 1, value: 1, class: "form-control w-25"%>
+  <%= form.submit "Ajouter au panier".html_safe, class:"btn btn-success"%>
+<% end %>
+</div>
+
+<% else %>
+<div class="form-inline">
+<%= form_with method: "PUT", url: cart_path  do |form| %>
+  <%= form.number_field :quantity , value: @cart.is_in_cart?(params[:id]).quantity , class:"form-control w-25"%>
+  <%= form.submit "Modifier la quantité ".html_safe, class:"btn btn-success "%>
+  <%= link_to "<i class='fa fa-trash'></i>".html_safe, item_path(params[:id]), method: "DELETE",class: "btn btn-danger", remote: true %>
+<% end %>
+</div>
+<% end %>
+

@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Admin Orders</h1>
+
+<%= link_to 'Nouvelle Commande', new_admin_order_path, class:"btn btn-primary" %>
+
+
+<br>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Ref:</th>
+      <th scope="col" >Utilisateur:</th>
+      <th scope="col" >Commande réalisée le:</th>
+      <th scope="col">Total:</th>
+      <th scope="col" >Action:</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @admin_orders.each do |admin_order| %>
+    <tr>
+      <th scope="row"><%= admin_order.id %></th>
+      <td ><%= admin_order.user.first_name + " " + admin_order.user.last_name %> </td>
+      <td><%= admin_order.created_at.strftime('%d/%m/%Y à %H:%M') %></td>
+      <td><%= admin_order.total  %></td>
+      <td width="15%"><%= link_to 'Show', admin_order_path(admin_order) %> <%= link_to 'Edit', edit_admin_order_path(admin_order) %> <%= link_to 'Destroy', admin_order_path(admin_order), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<br>
+
+

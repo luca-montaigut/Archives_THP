@@ -1,0 +1,16 @@
+<main class="container">
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6">
+            <h1>Editer votre profil</h1>
+
+            <%= render 'form', user: @user %>
+            <div class="text-center">
+                <%= link_to 'Voir le profil', @user, class:"btn btn-warning" %> |
+                <%= link_to '« Retour Accueil', root_path, class:"btn btn-outline-warning" %>
+            </div>
+        </div>
+        <div class="col-3"></div>
+    </div>
+    
+</main>

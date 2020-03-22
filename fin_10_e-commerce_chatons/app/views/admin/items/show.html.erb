@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+    <br>
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item active" aria-current="page">Home</li>
+  </ol>
+</nav>
+<div class="card">
+    <div class="row no-gutters">
+        <div class="col-auto">
+        <%= image_tag @admin_item.picture, class:"img-fluid", width:"400px"%>
+        </div>
+        <div class="col">
+        <div class="card-block px-2">
+            <h4 class="card-title"><%= @admin_item.title%></h4>
+            <h5 class="card-title"><strong><%= @admin_item.price%>€</strong></h5>
+
+            <p class="card-text"><%= @admin_item.description%></p>
+            <%= link_to "<i class='fas fa-shopping-cart'> </i>  Ajouter au panier".html_safe, cart_path, data:{ method: "PUT" }, class:"btn btn-success"%>
+        </div>
+    </div>
+</div>
+<div class="card-footer w-100 text-muted">
+<b><%= @admin_item.category.name %></b>
+    Footer stating cats are CUTE little animals
+</div>
+
+<div class="text-center">
+  <%= link_to 'Edit', edit_admin_item_path(@admin_item), class:"btn btn-success" %> |
+  <%= link_to 'Back', admin_items_path, class:"btn btn-primary" %>
+</div>
+

@@ -1,0 +1,48 @@
+    <br>
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item active" aria-current="page">Home</li>
+  </ol>
+</nav>
+<div class="card">
+    <div class="row no-gutters">
+        <div class="col-auto">
+        <%= image_tag @item.picture, class:"img-fluid", width:"400px"%>
+        </div>
+        <div class="col">
+        <div class="card-block px-2">
+            <h4 class="card-title"><%= @item.title%></h4>
+            <h5 class="card-title"><strong><%= @item.price%>€</strong></h5>
+            <%= render 'rating/show', rate: @rate%>
+            <p class="card-text"><%= @item.description%></p>
+            <div id="btn-cart">
+                <%= render 'add_cart', rate: @rate%>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="card-footer w-100 text-muted">
+<b><%= @item.category.name %></b>
+</div>
+</div>
+<div id="rating">
+<%= render 'rating/rating', item: @item%>
+</div>
+<div class=>
+<h2>Commentaires</h2>
+
+<div>
+  <%= render 'comments/index'%>
+  <%= render 'comments/new'%>
+</div>
+
+<div class="toast" id="myToast">
+    <div class="toast-header">
+        <strong class="mr-auto"><i class="fa fa-grav"></i> We miss you!</strong>
+        <small>11 mins ago</small>
+        <button type="button" class="ml-2 mb-1 close" data-dismiss="toast">&times;</button>
+    </div>
+    <div class="toast-body">
+        It's been a long time since you visited us. We've something special for you. <a href="#">Click here!</a>
+    </div>
