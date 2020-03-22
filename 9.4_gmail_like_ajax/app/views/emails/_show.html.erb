@@ -1,0 +1,15 @@
+<br>
+<div class="container">
+  <div class="row">
+  
+    <div>
+      <p><b>Object : </b><%= email.object %></p>
+      <hr>
+      <p><%= email.body %></p>
+      <div>
+        <%= link_to "Delete", email_path(email.id), class:"btn btn-danger", data:{method: "DELETE"}, remote: true %>
+        <%= link_to "Mark as not read", email_path(email.id), id:"btn-read", class:"btn btn-info", data:{method: "PUT"}, remote: true %>
+      </div>
+    </div>
+  </div>
+</div>

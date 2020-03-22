@@ -1,0 +1,8 @@
+if (<%= @email.read %>) {
+  document.getElementById('btn-read').innerHTML = "Mark as not read"
+  document.getElementById('<%= @email.id %>').classList.remove("list-group-item-secondary")
+} else {
+  document.getElementById('btn-read').innerHTML = "Mark as read"
+  document.getElementById('<%= @email.id %>').classList.add("list-group-item-secondary")
+}
+

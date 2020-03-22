@@ -1,0 +1,26 @@
+
+<div class="container">
+
+  <div class="row ml-3">
+      <div class="offset-md-3 col-md-6 offset-md-3">
+          <%= form_tag(tasks_path, method: "post", class: "form", id: "contact-form", remote: true)  do %>
+              <div class="form-group">
+                  <%= label_tag "Task", nil, class: "form-label" %>
+                  <%= text_field_tag :title, nil, class: "form-control", placeholder: "Buy burgers" %>
+              </div>
+              <div class="form-group">
+                  <%= label_tag "Deadline", nil, class: "form-label" %>
+                  <%= date_field_tag :deadline, nil, class: "form-control" %>
+
+              </div>
+              <div class="form-group">
+                  <%= label_tag "Category", nil, class: "form-label" %>
+                  <%= select_tag "Category", options_from_collection_for_select(@categories, "id", "title", "1"), class: "form-control"  %>
+              </div>
+
+              <div class="text-center">
+                  <%= submit_tag("Create task", class: "btn btn-start-order") %>
+              </div>
+          <%end%>
+      </div>
+  </div>

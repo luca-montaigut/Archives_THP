@@ -1,0 +1,3 @@
+document.getElementById('content').innerHTML = ""
+document.getElementById('content').insertAdjacentHTML("beforeend", "<%= j render 'show', email: @email %>")
+document.getElementById('<%= @email.id %>').classList.remove("list-group-item-secondary")

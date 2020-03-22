@@ -1,0 +1,28 @@
+<h1 class="text-center mb-4">Welcome to my todolist app</h1>
+<%= render 'layouts/task_form'  %>
+<div class="container">
+  <ul>
+  <% @categories.each do  |category|%>
+  <li id="<%= category.title.split.join.downcase %>"><%= category.title  %></li>
+  <div class="card">
+    <ul>
+      <% category.tasks.sort_by {|task| task.created_at}.each do |task|  %>
+        <%= render 'tasks/task', task: task%>
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
+  </ul>
+</div>
+
+<div class="container">
+  <div class="row">
+    <% @tasks.each do |task|  %>
+      <div class="card col-3">
+        <% unless task.image.nil? %>
+          <%= image_tag task.image, class: "rounded-circle" %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
